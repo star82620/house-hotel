@@ -123,7 +123,15 @@ li {
   font-size: 50px;
 }
 
-.container {
+.success {
+  display: none;
+}
+
+.fail {
+  display: none;
+}
+
+.alert .container {
   box-sizing: border-box;
   padding: 125px 0 104px;
   background-color: #38470b;
@@ -135,25 +143,28 @@ li {
   align-items: center;
   color: #ffffff;
 }
-.container .pic {
+.alert .container .pic {
   display: flex;
   position: relative;
   width: 124px;
   height: 157px;
 }
-.container .pic .bg {
+.alert .container .pic .bg {
   width: 100%;
 }
-.container .pic .check {
+.alert .container .pic .check {
   width: 50%;
 }
-.container .check {
+.alert .container .pic .cross {
+  width: 37px;
+}
+.alert .container .check, .alert .container .cross {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
-.container p {
+.alert .container p {
   text-align: center;
   line-height: 30px;
 }

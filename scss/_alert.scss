@@ -1,4 +1,12 @@
-.container{
+.success{
+  display: none;
+}
+
+.fail{
+  display: none;
+}
+
+.alert .container{
   box-sizing: border-box;
   padding: 125px 0 104px;
   background-color: $primary;
@@ -20,8 +28,11 @@
     .check{
       width: 50%;
     }
+    .cross{
+      width: 37px;
+    }
   }
-  .check{
+  .check ,.cross{
     position: absolute;
     left: 50%;
     top: 50%;
