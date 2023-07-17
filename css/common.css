@@ -18,12 +18,16 @@ html {
 }
 
 a {
-  font-style: none;
+  text-decoration: none;
 }
 
 ul,
 li {
   list-style: none;
+}
+
+.fz-10 {
+  font-size: 10px;
 }
 
 .fz-12 {
