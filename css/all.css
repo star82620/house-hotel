@@ -103,6 +103,10 @@ li {
   font-size: 24px;
 }
 
+.fz-26 {
+  font-size: 26px;
+}
+
 .fz-28 {
   font-size: 28px;
 }
@@ -129,6 +133,10 @@ li {
 
 .fail {
   display: none;
+}
+
+.booking {
+  display: block;
 }
 
 .alert .container {
@@ -167,4 +175,59 @@ li {
 .alert .container p {
   text-align: center;
   line-height: 30px;
+}
+
+.booking .container {
+  border: 1px solid #38470b;
+  background-color: #38470b;
+  display: flex;
+  width: 1110px;
+  height: 600px;
+}
+.booking .customer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #ffffff;
+  padding: 50px 65px 26px;
+  width: 445px;
+}
+.booking .customer ul li {
+  gap: 7px;
+  display: flex;
+  flex-direction: column;
+}
+.booking .customer ul li:nth-child(n+2) {
+  margin-top: 16px;
+}
+.booking .customer input {
+  height: 38px;
+}
+.booking .customer button {
+  margin-top: 20px;
+  width: 100%;
+  height: 42px;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  background-color: #38470b;
+}
+.booking .customer .days {
+  color: #949c7c;
+  margin: 16px 0;
+}
+.booking .customer .total {
+  border-top: 1px solid #949c7c;
+  padding-top: 8px;
+  text-align: right;
+}
+.booking .customer .total h4 {
+  line-height: 36px;
+}
+.booking .customer span {
+  text-align: center;
+}
+.booking .info {
+  width: 665px;
+  height: 100%;
+  background-color: #ffffff;
 }
