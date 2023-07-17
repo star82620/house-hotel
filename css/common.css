@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap");
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif, "Noto Sans", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  font-style: none;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+.fz-12 {
+  font-size: 12px;
+}
+
+.fz-14 {
+  font-size: 14px;
+}
+
+.fz-16 {
+  font-size: 16px;
+}
+
+.fz-18 {
+  font-size: 18px;
+}
+
+.fz-20 {
+  font-size: 20px;
+}
+
+.fz-24 {
+  font-size: 24px;
+}
+
+.fz-28 {
+  font-size: 28px;
+}
+
+.fz-36 {
+  font-size: 36px;
+}
+
+.fz-40 {
+  font-size: 40px;
+}
+
+.fz-48 {
+  font-size: 48px;
+}
+
+.fz-50 {
+  font-size: 50px;
+}
