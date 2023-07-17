@@ -1,4 +1,7 @@
 // 這頁是整合的 CSS，把拆分的檔案 import 進來，html link 這一頁
 
 // 共用的 CSS 設定
+@import "reset";
 @import "common";
+
+@import "alert";
