@@ -5,7 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>House Hotel</title>
     <link rel="stylesheet" href="./css/all.css" />
-    <script src="init.js" defer></script>
+    <script src="./js/init.js" defer></script>
+    <script src="./js/renderRoomList.js" defer></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"
+      defer
+    ></script>
+    <script src="./js/hotelPhotoSwiper.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <main id="hotel">
+      <div class="hotelPhotoSwiper swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img
+              src="./img/index/photo-househotel-1@2x.png"
+              alt="photo-househotel-1"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="./img/index/photo-househotel-2@2x.png"
+              alt="photo-househotel-2"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="./img/index/photo-househotel-3@2x.png"
+              alt="photo-househotel-3"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="./img/index/photo-househotel-4@2x.png"
+              alt="photo-househotel-4"
+            />
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <div class="hotelContainer">
+        <div class="hotelInfoContainer">
+          <div class="hotelLogo">
+            <img src="./img/index/logo-househotel.svg" alt="logo-househotel" />
+          </div>
+          <section class="hotelInfo fz-12">
+            <h1 class="hotelName">好室旅店。HOUSE HOTEL</h1>
+            <div class="hotelConnectInfo">
+              <p class="hotelAddress">花蓮縣花蓮市國聯一路1號</p>
+              <p class="hotelTel">03-8321155</p>
+              <p class="hotelEmail">HOUSE@HOTEL.COM</p>
+            </div>
+          </section>
+        </div>
+        <ul class="hotelRoomList"></ul>
+      </div>
+    </main>
+  </body>
 </html>

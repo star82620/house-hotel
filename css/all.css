@@ -699,3 +699,107 @@ main {
   margin-top: 6px;
   color: #949c7c;
 }
+
+#hotel {
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  position: relative;
+}
+#hotel .swiper {
+  width: 100%;
+  height: 100%;
+}
+#hotel .swiper img {
+  width: 100%;
+}
+#hotel .swiper-slide {
+  position: relative;
+}
+#hotel .swiper-slide::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+#hotel .swiper-pagination {
+  width: fit-content;
+  left: 168px;
+  bottom: 48px;
+}
+#hotel .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  opacity: 1;
+}
+#hotel .swiper-pagination-bullet-active {
+  background-color: #ffffff;
+}
+
+.hotelContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 550px;
+  position: absolute;
+  z-index: 5;
+}
+
+.hotelInfoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  height: 100%;
+}
+
+.hotelConnectInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px 0;
+  margin-top: 16px;
+  font-weight: 300;
+}
+
+.hotelRoomList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-left: 136px;
+  width: 825px;
+}
+
+.hotelRoomItem {
+  width: 275px;
+  height: 275px;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: cover;
+}
+.hotelRoomItem img {
+  width: 100%;
+  height: auto;
+}
+.hotelRoomItem:hover .hotelRoomName {
+  opacity: 1;
+}
+
+.hotelRoomName {
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 275px;
+  height: 275px;
+  font-size: 19px;
+  color: #ffffff;
+  background-color: rgba(56, 71, 11, 0.6);
+  transition: 0.3s;
+}
