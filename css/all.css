@@ -188,6 +188,10 @@ html {
   font-size: 24px;
 }
 
+.fz-26 {
+  font-size: 26px;
+}
+
 .fz-28 {
   font-size: 28px;
 }
@@ -208,6 +212,107 @@ html {
   font-size: 50px;
 }
 
+.bookingCalender {
+  border: 1px solid #38470b;
+  border-radius: 0 !important;
+}
+
+.vanilla-calendar {
+  min-width: 603px !important;
+  min-height: 278px !important;
+}
+
+.vanilla-calendar-arrow:before {
+  background-color: #949c7c !important;
+}
+
+.vanilla-calendar-arrow {
+  width: 14px !important;
+  height: 19px !important;
+}
+
+.vanilla-calendar-controls {
+  z-index: 20 !important;
+  padding-top: 14px !important;
+}
+
+.dayBtn, .dayBtnToday {
+  color: #38470b;
+  border: none;
+  font-size: 11px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+.dayBtn:hover, .dayBtnToday:hover {
+  background-color: #949c7c;
+  color: #ffffff;
+}
+
+.dayBtnSelected {
+  background-color: #38470b;
+  color: #ffffff;
+}
+
+.daySelectedIntermediate .dayBtnSelected {
+  background-color: transparent;
+  color: #38470b;
+}
+
+.daySelectedFirst .dayBtnSelected {
+  background-color: #38470b;
+  color: #ffffff;
+}
+
+.daySelectedLast .dayBtnSelected {
+  background-color: #949c7c;
+  color: #ffffff;
+}
+
+.daySelectedLast {
+  background: linear-gradient(to left, #ffffff, rgba(56, 71, 11, 0.2));
+  border-radius: 0 100% 100% 0;
+  font-weight: bold;
+}
+
+.daySelectedFirst {
+  background: linear-gradient(to right, #ffffff, rgba(56, 71, 11, 0.2));
+  border-radius: 100% 0 0 100%;
+  font-weight: bold;
+}
+
+.daySelectedIntermediate {
+  background-color: rgba(56, 71, 11, 0.2);
+}
+
+.dayBtnDisabled {
+  color: rgba(56, 71, 11, 0.3);
+  text-decoration: line-through;
+  pointer-events: none;
+}
+
+.vanilla-calendar-week {
+  color: rgba(56, 71, 11, 0.5) !important;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.0392156863);
+}
+
+.vanilla-calendar-week__day {
+  color: rgba(56, 71, 11, 0.5) !important;
+}
+
+.month, .year {
+  color: #38470b;
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+}
+
+.vanilla-calendar-header__content {
+  gap: 4px;
+}
+
 .success {
   display: none;
 }
@@ -216,7 +321,15 @@ html {
   display: none;
 }
 
+.booking {
+  display: none;
+}
+
 .alert .container {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   box-sizing: border-box;
   padding: 125px 0 104px;
   background-color: #38470b;
@@ -253,6 +366,192 @@ html {
 .alert .container p {
   text-align: center;
   line-height: 30px;
+}
+.alert .container .close {
+  width: 12px;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+.alert .container .close img {
+  width: 100%;
+}
+
+.booking .container {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #38470b;
+  background-color: #38470b;
+  display: flex;
+}
+.booking .container .close {
+  width: 12px;
+  position: absolute;
+  top: 38px;
+  right: 38px;
+}
+.booking .container .close img {
+  width: 100%;
+}
+.booking .customer {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #ffffff;
+  padding: 50px 65px 26px;
+  width: 445px;
+}
+.booking .customer ul li {
+  gap: 7px;
+  display: flex;
+  flex-direction: column;
+}
+.booking .customer ul li:nth-child(n+2) {
+  margin-top: 16px;
+}
+.booking .customer input {
+  color: #38470b;
+  height: 38px;
+  text-indent: 10px;
+}
+.booking .customer input:focus {
+  outline: none;
+}
+.booking .customer .submit {
+  margin-top: 20px;
+  width: 100%;
+  height: 42px;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  background-color: #38470b;
+}
+.booking .customer .submit:hover {
+  border: 1px solid #949c7c;
+}
+.booking .customer .submit:active {
+  background-color: #949c7c;
+  color: #ffffff;
+}
+.booking .customer .days {
+  color: #949c7c;
+  margin: 16px 0;
+}
+.booking .customer .total {
+  border-top: 1px solid #949c7c;
+  padding-top: 8px;
+  text-align: right;
+}
+.booking .customer .total h4 {
+  line-height: 36px;
+}
+.booking .customer span {
+  text-align: center;
+  margin-top: 18px;
+}
+.booking .info {
+  box-sizing: border-box;
+  padding: 50px 94px 25px 30px;
+  width: 665px;
+  background-color: #ffffff;
+  color: #38470b;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.booking .info h2 {
+  width: fit-content;
+  line-height: 33px;
+  font-weight: bold;
+  position: relative;
+}
+.booking .info h2::after {
+  content: "";
+  display: block;
+  background-color: #949c7c;
+  opacity: 20%;
+  position: absolute;
+  height: 1px;
+  margin-left: 6px;
+  top: 50%;
+  right: -395px;
+  left: 100%;
+}
+.booking .info p {
+  line-height: 24px;
+}
+.booking .info h3 {
+  width: fit-content;
+  line-height: 24px;
+  font-weight: bold;
+  position: relative;
+}
+.booking .info h3::after {
+  content: "";
+  display: block;
+  background-color: #949c7c;
+  opacity: 20%;
+  position: absolute;
+  height: 1px;
+  margin-left: 6px;
+  top: 50%;
+  right: -477px;
+  left: 100%;
+}
+.booking .info .icon {
+  display: flex;
+  gap: 20px;
+  text-align: center;
+}
+.booking .info .icon p {
+  color: #949c7c;
+}
+
+.bookingInfoList li {
+  line-height: 26px;
+  list-style: disc;
+  list-style-position: inside;
+}
+
+.bookingProcess {
+  display: flex;
+  justify-content: space-between;
+}
+.bookingProcess li {
+  position: relative;
+  line-height: 18px;
+  text-align: center;
+  width: 160px;
+  height: 136px;
+  border: 1px solid #949c7c;
+  border-radius: 0px 0px 10px 10px;
+}
+.bookingProcess li + li::before {
+  content: url("../img/room/arrow-left.svg");
+  position: absolute;
+  width: 7px;
+  height: 14px;
+  left: -15px;
+  top: 25px;
+  transform: translate(-50%, -50%);
+  transform: rotate(-180deg);
+}
+.bookingProcess li .pic {
+  height: 50px;
+  background-color: #949c7c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bookingProcess li .pic img {
+  width: 20%;
+  align-self: start;
+  margin: auto;
+}
+.bookingProcess li p {
+  margin-top: 12px;
 }
 
 main {
