@@ -408,7 +408,6 @@ main {
 #hotel {
   display: flex;
   align-items: center;
-  background: #989494;
   color: #ffffff;
   position: relative;
 }
@@ -477,8 +476,8 @@ main {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  width: 825px;
   margin-left: 136px;
+  width: 825px;
 }
 
 .hotelRoomItem {
@@ -493,24 +492,19 @@ main {
   width: 100%;
   height: auto;
 }
-.hotelRoomItem:hover .hotelRoomMask {
-  opacity: 0.6;
-}
-.hotelRoomItem:hover .hotelRoomMask .hotelName {
+.hotelRoomItem:hover .hotelRoomName {
   opacity: 1;
 }
 
-.hotelRoomMask {
-  opacity: 0.6;
+.hotelRoomName {
+  opacity: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #38470b;
   width: 275px;
   height: 275px;
   font-size: 19px;
-  position: absolute;
-  top: 0;
-  left: 0;
+  color: #ffffff;
+  background-color: rgba(56, 71, 11, 0.6);
   transition: 0.3s;
 }
