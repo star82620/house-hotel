@@ -127,6 +127,76 @@ li {
   font-size: 50px;
 }
 
+.calendar {
+  border: 1px solid #38470b;
+  border-radius: 0 !important;
+}
+
+.vanilla-calendar-arrow:before {
+  background-color: #949c7c !important;
+}
+
+.dayBtn, .dayBtnToday {
+  color: #38470b;
+  border: none;
+  font-size: 11px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+.dayBtn:hover, .dayBtnToday:hover {
+  background-color: #949c7c;
+  color: #ffffff;
+}
+
+.dayBtnSelected {
+  background-color: #38470b;
+  color: #ffffff;
+}
+
+.daySelectedLast {
+  background: linear-gradient(to left, #ffffff, rgba(56, 71, 11, 0.2));
+  border-radius: 0 100% 100% 0;
+}
+
+.daySelectedFirst {
+  background: linear-gradient(to right, #ffffff, rgba(56, 71, 11, 0.2));
+  border-radius: 100% 0 0 100%;
+}
+
+.daySelectedIntermediate {
+  background-color: rgba(56, 71, 11, 0.2);
+}
+
+.dayBtnDisabled {
+  color: rgba(56, 71, 11, 0.3);
+  text-decoration: line-through;
+  pointer-events: none;
+}
+
+.vanilla-calendar-week {
+  color: rgba(56, 71, 11, 0.5) !important;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.0392156863);
+}
+
+.month, .year {
+  color: #38470b;
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+}
+
+.vanilla-calendar-header__content {
+  gap: 4px;
+}
+
+.vanilla-calendar-months__month, .vanilla-calendar-years__year {
+  color: #38470b !important;
+  background-color: rgba(56, 71, 11, 0.2);
+}
+
 .success {
   display: none;
 }
@@ -227,7 +297,46 @@ li {
   text-align: center;
 }
 .booking .info {
+  padding: 51px 0 26px 51px;
   width: 665px;
   height: 100%;
   background-color: #ffffff;
+  color: #38470b;
+}
+.booking .info h2 {
+  line-height: 33px;
+}
+.booking .info h3 {
+  line-height: 24px;
+  font-weight: bold;
+}
+.booking .info .bookingProcess {
+  display: flex;
+  justify-content: space-between;
+}
+.booking .info .bookingProcess li {
+  position: relative;
+  line-height: 18px;
+  text-align: center;
+  width: 160px;
+  height: 136px;
+  border: 1px solid #949c7c;
+  border-radius: 0px 0px 10px 10px;
+}
+.booking .info .bookingProcess li::before {
+  content: ">";
+  position: absolute;
+  left: -15px;
+  top: 25px;
+  transform: translate(-100%, -50%);
+}
+.booking .info .bookingProcess li .pic {
+  height: 50px;
+  background-color: #949c7c;
+}
+.booking .info .bookingProcess li .pic img {
+  width: 20%;
+}
+.booking .info .bookingProcess li p {
+  margin-top: 12px;
 }

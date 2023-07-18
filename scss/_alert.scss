@@ -101,9 +101,49 @@
   }
   
   .info{
+    padding: 51px 0 26px 51px;
     width: 665px;
     height: 100%;
     background-color: $secondary;
+    color: $primary;
+    h2{
+      line-height: 33px;
+    }
+    h3{
+      line-height: 24px;
+      font-weight: bold;
+    }
+    .bookingProcess{
+      display: flex;
+      justify-content: space-between;
+      li{
+        position: relative;
+        &::before{
+          content: '>';
+          position: absolute;
+          left: -15px;
+          top: 25px;
+          transform: translate(-100%, -50%);
+        }
+        line-height: 18px;
+        text-align: center;
+        width: 160px;
+        height: 136px;
+        border: 1px solid $tertiary;
+        border-radius: 0px 0px 10px 10px;
+        .pic{
+          height: 50px;
+          background-color: $tertiary;
+          img{
+            width: 20%;
+            
+          }
+        }
+        p{
+          margin-top: 12px;
+        }
+      }
+    }
   }
 }
 

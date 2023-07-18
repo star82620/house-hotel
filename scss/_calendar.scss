@@ -1,0 +1,71 @@
+.calendar{
+  border: 1px solid $primary;
+  border-radius: 0 !important;
+}
+
+.vanilla-calendar-arrow:before{
+  background-color: $tertiary !important;
+}
+
+
+
+.dayBtn, .dayBtnToday{
+  color: $primary;
+  border: none;
+  font-size: 11px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: $secondary;
+  &:hover{
+    background-color: $tertiary;
+    color: $secondary;
+  }
+}
+
+.dayBtnSelected{
+  background-color: $primary;
+  color: $secondary;
+}
+
+.daySelectedLast{
+  background: linear-gradient(to left, $secondary, rgba(56, 71, 11, 20%));
+  border-radius: 0 100% 100% 0;
+}
+
+.daySelectedFirst{
+  background: linear-gradient(to right, $secondary, rgba(56, 71, 11, 20%));
+  border-radius: 100% 0 0 100%;
+}
+
+.daySelectedIntermediate{
+  background-color: rgba(56, 71, 11, 20%);
+}
+
+.dayBtnDisabled{
+  color:  rgba(56, 71, 11, 30%);
+  text-decoration: line-through;
+  pointer-events: none;
+}
+
+.vanilla-calendar-week{
+  color: rgba(56, 71, 11, 50%) !important;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #0000000A;
+}
+
+.month ,.year{
+  color: $primary;
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+}
+
+.vanilla-calendar-header__content{
+  gap: 4px;
+}
+
+.vanilla-calendar-months__month, .vanilla-calendar-years__year{
+  color: $primary !important;
+  background-color: rgba(56, 71, 11, 20%);
+}
