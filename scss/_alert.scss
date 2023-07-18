@@ -1,44 +1,45 @@
-.success{
+.success {
   display: none;
 }
 
-.fail{
+.fail {
   display: none;
 }
 
-.alert .container{
+.alert .container {
   box-sizing: border-box;
   padding: 125px 0 104px;
   background-color: $primary;
   width: 1110px;
-  height: 600px; 
+  height: 600px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   color: $secondary;
-  .pic{
+  .pic {
     display: flex;
     position: relative;
     width: 124px;
     height: 157px;
-    .bg{
+    .bg {
       width: 100%;
     }
-    .check{
+    .check {
       width: 50%;
     }
-    .cross{
+    .cross {
       width: 37px;
     }
   }
-  .check ,.cross{
+  .check,
+  .cross {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
   }
-  p{
+  p {
     text-align: center;
     line-height: 30px;
   }
