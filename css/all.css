@@ -404,3 +404,77 @@ main {
   margin-top: 6px;
   color: #949c7c;
 }
+
+#hotel {
+  display: flex;
+  align-items: center;
+  background: #989494;
+  color: #ffffff;
+}
+
+.hotelContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 550px;
+}
+
+.hotelInfoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  height: 100%;
+}
+
+.hotelConnectInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px 0;
+  margin-top: 16px;
+  font-weight: 300;
+}
+
+.hotelRoomList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 825px;
+  margin-left: 136px;
+}
+
+.hotelRoomItem {
+  width: 275px;
+  height: 275px;
+  position: relative;
+}
+.hotelRoomItem img {
+  width: 100%;
+  height: auto;
+}
+.hotelRoomItem:hover .hotelRoomMask {
+  opacity: 0.6;
+}
+.hotelRoomItem:hover .hotelRoomMask .hotelName {
+  opacity: 1;
+}
+
+.hotelRoomMask {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #38470b;
+  opacity: 0;
+  width: 275px;
+  height: 275px;
+  font-size: 19px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.3s;
+}
+
+.hotelRoomName {
+  opacity: 1;
+}

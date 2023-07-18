@@ -1,0 +1,95 @@
+#hotel {
+  display: flex;
+  align-items: center;
+  background: #989494;
+  color: $secondary;
+}
+
+.hotelContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 550px;
+}
+
+.hotelInfoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  height: 100%;
+}
+
+.hotelLogo {
+}
+
+.hotelInfo {
+}
+
+.hotelName {
+}
+
+.hotelConnectInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px 0;
+  margin-top: 16px;
+  font-weight: 300;
+}
+
+.hotelAddress {
+}
+
+.hotelTel {
+}
+
+.hotelEmail {
+}
+
+.hotelRoomList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 825px;
+  margin-left: 136px;
+}
+
+.hotelRoomItem {
+  width: 275px;
+  height: 275px;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  &:hover .hotelRoomMask {
+    opacity: 0.6;
+
+    .hotelName {
+      opacity: 1;
+    }
+  }
+}
+
+.hotelRoomMask {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // background-color: rgba($primary, 0.6);
+  background-color: $primary;
+  opacity: 0;
+  width: 275px;
+  height: 275px;
+  font-size: 19px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.3s;
+}
+
+.hotelRoomName {
+  opacity: 1;
+}
