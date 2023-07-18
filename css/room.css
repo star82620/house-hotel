@@ -1,0 +1,145 @@
+main {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.roomCoverContainer {
+  width: 40%;
+  height: 100%;
+  background: url("../img/room/photo-1501876725168-00c445821c9e.png");
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: cover;
+}
+
+.roomCover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0), #fcffff);
+}
+
+.backRoomList {
+  align-self: start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 88px;
+  gap: 10px;
+}
+.backRoomList .arrowLeft {
+  height: 16px;
+}
+.backRoomList a {
+  color: #38470b;
+}
+
+.roomPriceContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  margin-top: 450px;
+  gap: 20px;
+}
+
+.roomPrice {
+  line-height: 100%;
+}
+
+.bookingButton {
+  padding: 8px 64px;
+  margin-top: 10px;
+  background: #38470b;
+  color: #fcffff;
+  font-weight: 600;
+}
+
+.roomContentContainer {
+  width: 60%;
+}
+
+.roomContent {
+  margin-left: 30px;
+  width: 640px;
+}
+
+.roomContentTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-top: 107px;
+}
+
+.roomName {
+  font-weight: 600;
+}
+
+.roomSummary {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.roomCheckTime {
+  margin-top: 38px;
+  line-height: 24px;
+}
+
+.roomNotice {
+  margin-top: 35px;
+  font-weight: 300;
+  line-height: 24px;
+}
+.roomNotice li {
+  list-style: disc;
+}
+
+.roomFacilities {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 45px;
+  gap: 36px 25px;
+}
+
+.roomFacilityIcon {
+  display: flex;
+  align-items: start;
+  gap: 0 4px;
+}
+
+.facilityIconMain {
+  width: 40px;
+  height: auto;
+}
+
+.facilityIconSmall {
+  width: 15px;
+  height: auto;
+}
+
+.roomFacilityTitle {
+  margin-top: 7px;
+  text-align: center;
+}
+
+.roomBookingState {
+  margin-top: 28px;
+}
+.roomBookingState h3 {
+  font-weight: 500;
+}
+
+.bookingCalender {
+  margin-top: 8px;
+  width: 100%;
+  height: 200px;
+  border: 1px solid;
+}
+
+.reSearch {
+  margin-top: 6px;
+  color: #949c7c;
+}

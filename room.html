@@ -3,24 +3,264 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>House Hotel</title>
+    <title>House Hotel - Room</title>
     <link rel="stylesheet" href="./css/all.css" />
     <!-- calendar -->
     <link href="https://cdn.jsdelivr.net/npm/@uvarov.frontend/vanilla-calendar/build/vanilla-calendar.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@uvarov.frontend/vanilla-calendar/build/themes/light.min.css" rel="stylesheet">
+    <script src="init.js" defer></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"
+      defer
+    ></script>
   </head>
   <body>
+    <main>
+      <div class="roomCoverContainer">
+        <div class="roomCover">
+          <div class="backRoomList">
+            <img
+              class="arrowLeft"
+              src="./img/room/process/icon-arrow-left@2x.png"
+              alt="icon-arrow-left"
+            />
+            <a class="fz-14" href="index.html">查看其它房型</a>
+          </div>
+          <div class="roomPriceContainer">
+            <div class="roomPrice fz-36">$1380</div>
+            <div class="roomPriceSlash">/</div>
+            <div class="roomPricePer">1晚</div>
+          </div>
+          <button class="bookingButton fz-20">Booking Now</button>
+          <div class="swiperList"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <!--  -->
+      <div class="roomContentContainer">
+        <section class="roomContent">
+          <div class="roomContentTitle">
+            <h1 class="roomName fz-40">Single Room</h1>
+            <div class="roomSummary fz-14">
+              1人・ 單人床・ 附早餐・衛浴1間・18平方公尺
+            </div>
+          </div>
+          <div class="roomCheckTime fz-14">
+            平日（一～四）價格：1380 / 假日（五〜日）價格：1500<br />
+            入住時間：15：00（最早）/ 21：00（最晚） <br />
+            退房時間：10：00
+          </div>
+          <ul class="roomNotice fz-14">
+            <li>單人間僅供一位客人使用。</li>
+            <li>臥室配有單人床和私人浴室。</li>
+            <li>
+              您需要的一切為您準備：床單和毯子，毛巾，肥皂和洗髮水，吹風機。
+            </li>
+            <li>房間裡有AC，當然還有WiFi。</li>
+          </ul>
+          <ul class="roomFacilities">
+            <li>
+              <div class="roomFacilityIcon">
+                <img
+                  class="FacilityIconMain"
+                  src="./img/room/icon/icon-1-breakfast.svg"
+                  alt="icon-1-breakfast"
+                />
+                <img
+                  class="FacilityIconSmall"
+                  src="./img/room/icon/icon-0-cancel.svg"
+                  alt="icon-0-cancel"
+                />
+              </div>
+              <p class="roomFacilityTitle fz-10">早餐</p>
+            </li>
+            <li>
+              <div class="roomFacilityIcon">
+                <img
+                  class="FacilityIconMain"
+                  src="./img/room/icon/icon-1-breakfast.svg"
+                  alt="icon-1-breakfast"
+                />
+                <img
+                  class="FacilityIconSmall"
+                  src="./img/room/icon/icon-0-cancel.svg"
+                  alt="icon-0-cancel"
+                />
+              </div>
+              <p class="roomFacilityTitle fz-10">早餐</p>
+            </li>
+            <li>
+              <div class="roomFacilityIcon">
+                <img
+                  class="FacilityIconMain"
+                  src="./img/room/icon/icon-1-breakfast.svg"
+                  alt="icon-1-breakfast"
+                />
+                <img
+                  class="FacilityIconSmall"
+                  src="./img/room/icon/icon-0-cancel.svg"
+                  alt="icon-0-cancel"
+                />
+              </div>
+              <p class="roomFacilityTitle fz-10">早餐</p>
+            </li>
+            <li>
+              <div class="roomFacilityIcon">
+                <img
+                  class="FacilityIconMain"
+                  src="./img/room/icon/icon-1-breakfast.svg"
+                  alt="icon-1-breakfast"
+                />
+                <img
+                  class="FacilityIconSmall"
+                  src="./img/room/icon/icon-0-cancel.svg"
+                  alt="icon-0-cancel"
+                />
+              </div>
+              <p class="roomFacilityTitle fz-10">早餐</p>
+            </li>
+            <li>
+              <div class="roomFacilityIcon">
+                <img
+                  class="FacilityIconMain"
+                  src="./img/room/icon/icon-1-breakfast.svg"
+                  alt="icon-1-breakfast"
+                />
+                <img
+                  class="FacilityIconSmall"
+                  src="./img/room/icon/icon-0-cancel.svg"
+                  alt="icon-0-cancel"
+                />
+              </div>
+              <p class="roomFacilityTitle fz-10">早餐</p>
+            </li>
+            <li>
+              <div class="roomFacilityIcon">
+                <img
+                  class="FacilityIconMain"
+                  src="./img/room/icon/icon-1-breakfast.svg"
+                  alt="icon-1-breakfast"
+                />
+                <img
+                  class="FacilityIconSmall"
+                  src="./img/room/icon/icon-0-cancel.svg"
+                  alt="icon-0-cancel"
+                />
+              </div>
+              <p class="roomFacilityTitle fz-10">早餐</p>
+            </li>
+            <li>
+              <div class="roomFacilityIcon">
+                <img
+                  class="FacilityIconMain"
+                  src="./img/room/icon/icon-1-breakfast.svg"
+                  alt="icon-1-breakfast"
+                />
+                <img
+                  class="FacilityIconSmall"
+                  src="./img/room/icon/icon-0-cancel.svg"
+                  alt="icon-0-cancel"
+                />
+              </div>
+              <p class="roomFacilityTitle fz-10">早餐</p>
+            </li>
+            <li>
+              <div class="roomFacilityIcon">
+                <img
+                  class="FacilityIconMain"
+                  src="./img/room/icon/icon-1-breakfast.svg"
+                  alt="icon-1-breakfast"
+                />
+                <img
+                  class="FacilityIconSmall"
+                  src="./img/room/icon/icon-0-cancel.svg"
+                  alt="icon-0-cancel"
+                />
+              </div>
+              <p class="roomFacilityTitle fz-10">早餐</p>
+            </li>
+            <li>
+              <div class="roomFacilityIcon">
+                <img
+                  class="FacilityIconMain"
+                  src="./img/room/icon/icon-1-breakfast.svg"
+                  alt="icon-1-breakfast"
+                />
+                <img
+                  class="FacilityIconSmall"
+                  src="./img/room/icon/icon-0-cancel.svg"
+                  alt="icon-0-cancel"
+                />
+              </div>
+              <p class="roomFacilityTitle fz-10">早餐</p>
+            </li>
+            <li>
+              <div class="roomFacilityIcon">
+                <img
+                  class="FacilityIconMain"
+                  src="./img/room/icon/icon-1-breakfast.svg"
+                  alt="icon-1-breakfast"
+                />
+                <img
+                  class="FacilityIconSmall"
+                  src="./img/room/icon/icon-0-cancel.svg"
+                  alt="icon-0-cancel"
+                />
+              </div>
+              <p class="roomFacilityTitle fz-10">早餐</p>
+            </li>
+            <li>
+              <div class="roomFacilityIcon">
+                <img
+                  class="FacilityIconMain"
+                  src="./img/room/icon/icon-1-breakfast.svg"
+                  alt="icon-1-breakfast"
+                />
+                <img
+                  class="FacilityIconSmall"
+                  src="./img/room/icon/icon-0-cancel.svg"
+                  alt="icon-0-cancel"
+                />
+              </div>
+              <p class="roomFacilityTitle fz-10">早餐</p>
+            </li>
+            <li>
+              <div class="roomFacilityIcon">
+                <img
+                  class="FacilityIconMain"
+                  src="./img/room/icon/icon-1-breakfast.svg"
+                  alt="icon-1-breakfast"
+                />
+                <img
+                  class="FacilityIconSmall"
+                  src="./img/room/icon/icon-0-cancel.svg"
+                  alt="icon-0-cancel"
+                />
+              </div>
+              <p class="roomFacilityTitle fz-10">早餐</p>
+            </li>
+          </ul>
+          <div class="roomBookingState">
+            <h3 class="fz-14">空房狀態查詢</h3>
+            <div class="bookingCalender">
+              <!-- 行事曆 -->
+            </div>
+            <div class="reSearch fz-14">重新選取</div>
+          </div>
+        </section>
+      </div>
+    </main>
 
     <!-- 預約成功，預設隱藏 -->
     <section class="alert success">
-      <div class='container'>
+      <div class="container">
         <div class="pic">
-          <img class="bg" src="../img/success/surface1-10@2x.png">
-          <img class="check" src="../img/success/surface1-11@2x.png">
+          <img class="bg" src="../img/success/surface1-10@2x.png" />
+          <img class="check" src="../img/success/surface1-11@2x.png" />
         </div>
         <h2 class="fz-50">預約成功</h2>
         <p class="fz-18">
-          請留意簡訊發送訂房通知，入住當日務必出示此訂房通知，<br/>
+          請留意簡訊發送訂房通知，入住當日務必出示此訂房通知，<br />
           若未收到簡訊請來電確認，謝謝您
         </p>
       </div>
@@ -28,14 +268,14 @@
 
     <!-- 預約失敗，預設隱藏 -->
     <section class="alert fail">
-      <div class='container'>
+      <div class="container">
         <div class="pic">
-          <img class="bg" src="../img/success/surface1-10@2x.png">
-          <img class="cross" src="../img/fail/icons8-cancel-5@2x.png">
+          <img class="bg" src="../img/success/surface1-10@2x.png" />
+          <img class="cross" src="../img/fail/icons8-cancel-5@2x.png" />
         </div>
         <h2 class="fz-50">預約失敗</h2>
         <p class="fz-18">
-          哎呀！晚了一步！您預約的日期已經被預約走了，<br/>
+          哎呀！晚了一步！您預約的日期已經被預約走了，<br />
           再看看其它房型吧
         </p>
       </div>
