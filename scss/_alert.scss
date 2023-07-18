@@ -1,5 +1,6 @@
 .success {
   display: none;
+
 }
 
 .fail {
@@ -11,6 +12,10 @@
 }
 
 .alert .container {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   box-sizing: border-box;
   padding: 125px 0 104px;
   background-color: $primary;
@@ -47,19 +52,39 @@
     text-align: center;
     line-height: 30px;
   }
-  
+  .close{
+    width: 12px;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    img{
+      width: 100%;
+    }
+  }
 }
 
 
 .booking{
   .container{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     border: 1px solid $primary;
     background-color: $primary;
     display: flex;
-    width: 1110px;
-    height: 600px; 
+    .close{
+      width: 12px;
+      position: absolute;
+      top: 38px;
+      right: 38px;
+      img{
+        width: 100%;
+      }
+    } 
   }
   .customer{
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -75,15 +100,28 @@
       flex-direction: column;
     }
     input{
+      color: $primary;
       height: 38px;
+      text-indent: 10px;
+      &:focus{
+        outline: none;
+        // ba
+      }
     }
-    button{
+    .submit{
       margin-top: 20px;
       width: 100%;
       height: 42px;
       color: $secondary;
       border: 1px solid $secondary;
       background-color: $primary;
+      &:hover{
+        border: 1px solid $tertiary;
+      }
+      &:active{
+        background-color: $tertiary;
+        color: $secondary;
+      }
     }
     .days{
       color: $tertiary;
@@ -99,53 +137,112 @@
     }
     span{
       text-align: center;
+      margin-top: 18px;
     }
   }
   
   .info{
-    padding: 51px 0 26px 51px;
+    box-sizing: border-box;
+    padding: 50px 94px 25px 30px;
     width: 665px;
-    height: 100%;
     background-color: $secondary;
     color: $primary;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
     h2{
+      width: fit-content;
       line-height: 33px;
-    }
-    h3{
-      line-height: 24px;
       font-weight: bold;
-    }
-    .bookingProcess{
-      display: flex;
-      justify-content: space-between;
-      li{
-        position: relative;
-        &::before{
-          content: '>';
-          position: absolute;
-          left: -15px;
-          top: 25px;
-          transform: translate(-100%, -50%);
-        }
-        line-height: 18px;
-        text-align: center;
-        width: 160px;
-        height: 136px;
-        border: 1px solid $tertiary;
-        border-radius: 0px 0px 10px 10px;
-        .pic{
-          height: 50px;
-          background-color: $tertiary;
-          img{
-            width: 20%;
-            
-          }
-        }
-        p{
-          margin-top: 12px;
-        }
+      position: relative;
+      &::after{
+        content: '';
+        display: block;
+        background-color: $tertiary;
+        opacity: 20%;
+        position: absolute;
+        height: 1px;
+        margin-left: 6px;
+        top: 50%;
+        right: -395px; //547底寬, 146文字寬, 6 margin
+        left: 100%
       }
     }
+    p{
+      line-height: 24px;
+    }
+    h3{
+      width: fit-content;
+      line-height: 24px;
+      font-weight: bold;
+      position: relative;
+      &::after{
+        content: '';
+        display: block;
+        background-color: $tertiary;
+        opacity: 20%;
+        position: absolute;
+        height: 1px;
+        margin-left: 6px;
+        top: 50%;
+        right: -477px; //547底寬, 64文字寬, 6 margin
+        left: 100%
+      }
+    }
+    .icon{
+      display: flex;
+      gap: 20px;
+      text-align: center;
+      p{
+        color: $tertiary;
+      }
+    }
+    
   }
 }
 
+.bookingInfoList li{
+  line-height: 26px;
+  list-style: disc;
+  list-style-position: inside;
+}
+.bookingProcess{
+  display: flex;
+  justify-content: space-between;
+  li{
+    position: relative;
+    &+li::before{
+      content: url('../img/room/arrow-left.svg');
+      position: absolute;
+      // transform: rotateX(-180deg);
+      width: 7px;
+      height: 14px;
+      left: -15px;
+      top: 25px;
+      transform: translate( -50%, -50%);
+      transform: rotate(-180deg)
+    }
+    line-height: 18px;
+    text-align: center;
+    width: 160px;
+    height: 136px;
+    border: 1px solid $tertiary;
+    border-radius: 0px 0px 10px 10px;
+    .pic{
+      height: 50px;
+      background-color: $tertiary;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img{
+        width: 20%;
+        align-self: start;
+        margin: auto
+      }
+    }
+    p{
+      margin-top: 12px;
+    }
+  }
+}

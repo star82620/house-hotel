@@ -252,7 +252,7 @@
     </main>
 
     <!-- 預約成功，預設隱藏 -->
-    <section class="alert success">
+    <section class="alert success" data-popUpBtn="0">
       <div class="container">
         <div class="pic">
           <img class="bg" src="../img/success/surface1-10@2x.png" />
@@ -263,11 +263,12 @@
           請留意簡訊發送訂房通知，入住當日務必出示此訂房通知，<br />
           若未收到簡訊請來電確認，謝謝您
         </p>
+        <img class="close" data-close="0" src="img/room/icons8-cancel-5@2x.png" alt="close">
       </div>
     </section>
 
     <!-- 預約失敗，預設隱藏 -->
-    <section class="alert fail">
+    <section class="alert fail" data-popUpBtn="1">
       <div class="container">
         <div class="pic">
           <img class="bg" src="../img/success/surface1-10@2x.png" />
@@ -278,11 +279,12 @@
           哎呀！晚了一步！您預約的日期已經被預約走了，<br />
           再看看其它房型吧
         </p>
+        <img class="close" data-close="1" src="img/room/icons8-cancel-5@2x.png" alt="close">
       </div>
     </section>
 
     <!-- 預約畫面，預設隱藏 -->
-    <section class="booking">
+    <section class="booking" data-popUpBtn="2">
       <div class='container'>
         <div class="customer">
           <form>
@@ -309,24 +311,48 @@
               總計<br/>
               <h4 class="fz-26">$1,380</h4>
             </div>
-            <button type="submit" class="submit fz-18">確認送出</button>
+            <input type="button" class="submit fz-18" value="確認送出">
           </form>
-          <span>此預約系統僅預約功能，並不會對您進行收費</span>
+          <span class="fz-12">此預約系統僅預約功能，並不會對您進行收費</span>
         </div>
         <div class="info">
           <h2 class="fz-24">Single Room</h2>
-          <p>
+          <p class="fz-14">
             1人・ 單人床・附早餐・ 衛浴1間・18平方公尺<br/>
             平日（一～四）價格：1380 / 假日（五〜日）價格：1500
           </p>
           <ul class="icon">
             <li>
-              <img src="../img/room/icon/surface1-2.svg" alt="">
-              <p>早餐</p>
+              <img src="../img/room/icon/icon-1-breakfast.svg">
+              <p class="fz-10">早餐</p>
+            </li>
+            <li>
+              <img src="../img/room/icon/icon-1-breakfast.svg">
+              <p class="fz-10">早餐</p>
+            </li>
+            <li>
+              <img src="../img/room/icon/icon-1-breakfast.svg">
+              <p class="fz-10">早餐</p>
+            </li>
+            <li>
+              <img src="../img/room/icon/icon-1-breakfast.svg">
+              <p class="fz-10">早餐</p>
+            </li>
+            <li>
+              <img src="../img/room/icon/icon-1-breakfast.svg">
+              <p class="fz-10">早餐</p>
+            </li>
+            <li>
+              <img src="../img/room/icon/icon-1-breakfast.svg">
+              <p class="fz-10">早餐</p>
+            </li>
+            <li>
+              <img src="../img/room/icon/icon-1-breakfast.svg">
+              <p class="fz-10">早餐</p>
             </li>
           </ul>
           <h3>訂房資訊</h3>
-          <ul class="infoList">
+          <ul class="bookingInfoList fz-12">
             <li>
               入住時間：最早15：00，最晚21：00；退房時間：10：00，請自行確認行程安排。
             </li>
@@ -344,13 +370,13 @@
           <ul class="bookingProcess fz-12">
             <li>
               <div class="pic">
-                <img src="../img/room/process/surface1-11@2x.png" alt="">
+                <img src="img/room/process/icon-post-form.png" alt="icon-post-form">
               </div>
               <p>送出線上預約單</p>
             </li>
             <li>
               <div class="pic">
-                <img src="../img/room/process/surface1-11@2x.png" alt="">
+                <img src="img/room/process/icon-system-reply@2x.png" alt="icon-system-reply">
               </div>
               <p>系統立即回覆是否預訂成功<br/>
               並以簡訊發送訂房通知<br/>
@@ -358,7 +384,7 @@
             </li>
             <li>
               <div class="pic">
-                <img src="../img/room/process/surface1-11@2x.png" alt="">
+                <img src="img/room/process/icon-payment.png" alt="icon-payment">
               </div>
               <p>入住當日憑訂房通知<br/>
               以現金或刷卡付款即可<br/>
@@ -366,6 +392,7 @@
             </li>
           </ul>
         </div>
+        <img class="close" data-close="3" src="img/room/icons8-cancel.svg" alt="close">
       </div>
     </section> 
     
@@ -376,6 +403,6 @@
     <!-- Plugin JS -->
     <script src="https://cdn.jsdelivr.net/npm/@uvarov.frontend/vanilla-calendar/build/vanilla-calendar.min.js" defer></script>
     <script src="js/calendar.js"></script>
-
+    <script src="js/room.js"></script>
   </body>
 </html>

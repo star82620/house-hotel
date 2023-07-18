@@ -13,6 +13,18 @@
   background-color: $tertiary !important;
 }
 
+.vanilla-calendar-arrow{
+  width: 14px !important;
+  height: 19px !important;
+}
+
+.vanilla-calendar-controls{
+  z-index: 20 !important;
+  padding-top: 14px !important;
+  
+}
+
+
 
 
 .dayBtn, .dayBtnToday{
@@ -34,18 +46,37 @@
   color: $secondary;
 }
 
+.daySelectedIntermediate .dayBtnSelected{
+  background-color: transparent;
+  color: $primary;
+}
+
+.daySelectedFirst .dayBtnSelected{
+  background-color: $primary;
+  color: $secondary;
+}
+
+.daySelectedLast .dayBtnSelected{
+  background-color: $tertiary;
+  color: $secondary;
+}
+
 .daySelectedLast{
   background: linear-gradient(to left, $secondary, rgba(56, 71, 11, 20%));
   border-radius: 0 100% 100% 0;
+  font-weight: bold;
 }
 
 .daySelectedFirst{
   background: linear-gradient(to right, $secondary, rgba(56, 71, 11, 20%));
   border-radius: 100% 0 0 100%;
+  font-weight: bold;
+
 }
 
 .daySelectedIntermediate{
   background-color: rgba(56, 71, 11, 20%);
+  
 }
 
 .dayBtnDisabled{
@@ -76,7 +107,7 @@
   gap: 4px;
 }
 
-.vanilla-calendar-days{
-  column-gap: 9px !important;
-}
+// .vanilla-calendar-days{
+//   column-gap: 0px !important;
+// }
 

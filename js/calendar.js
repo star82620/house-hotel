@@ -9,13 +9,12 @@
             dayBtnToday: 'dayBtnToday',
             dayBtnSelected: 'dayBtnSelected',
             daySelectedIntermediate: 'daySelectedIntermediate',
-            // days: 'days',
             daySelectedLast: 'daySelectedLast',
             daySelectedFirst: 'daySelectedFirst',
             dayBtnDisabled: 'dayBtnDisabled',
             month: 'month',
-            year: 'year'
-
+            year: 'year',
+            dayBtnHover: 'dayBtnHover'
         },
         settings: {
             iso8601: false, // true>'一'為當週第1天; false>'日'為當週第1天
