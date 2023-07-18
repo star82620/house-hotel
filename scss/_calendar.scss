@@ -1,6 +1,12 @@
-.calendar{
+.bookingCalender{
   border: 1px solid $primary;
   border-radius: 0 !important;
+}
+
+.vanilla-calendar{
+  min-width: 603px !important;
+  min-height: 278px !important;
+
 }
 
 .vanilla-calendar-arrow:before{
@@ -54,6 +60,11 @@
   border-bottom: 1px solid #0000000A;
 }
 
+.vanilla-calendar-week__day{
+  color: rgba(56, 71, 11, 50%) !important;
+
+}
+
 .month ,.year{
   color: $primary;
   background-color: transparent;
@@ -65,7 +76,7 @@
   gap: 4px;
 }
 
-.vanilla-calendar-months__month, .vanilla-calendar-years__year{
-  color: $primary !important;
-  background-color: rgba(56, 71, 11, 20%);
+.vanilla-calendar-days{
+  column-gap: 9px !important;
 }
+

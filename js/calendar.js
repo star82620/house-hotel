@@ -3,11 +3,13 @@
     let calendar;
 
     const options = {
+        type: 'multiple',
         CSSClasses: {
             dayBtn: 'dayBtn',
             dayBtnToday: 'dayBtnToday',
             dayBtnSelected: 'dayBtnSelected',
             daySelectedIntermediate: 'daySelectedIntermediate',
+            // days: 'days',
             daySelectedLast: 'daySelectedLast',
             daySelectedFirst: 'daySelectedFirst',
             dayBtnDisabled: 'dayBtnDisabled',

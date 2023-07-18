@@ -212,9 +212,14 @@ html {
   font-size: 50px;
 }
 
-.calendar {
+.bookingCalender {
   border: 1px solid #38470b;
   border-radius: 0 !important;
+}
+
+.vanilla-calendar {
+  min-width: 603px !important;
+  min-height: 278px !important;
 }
 
 .vanilla-calendar-arrow:before {
@@ -266,6 +271,10 @@ html {
   border-bottom: 1px solid rgba(0, 0, 0, 0.0392156863);
 }
 
+.vanilla-calendar-week__day {
+  color: rgba(56, 71, 11, 0.5) !important;
+}
+
 .month, .year {
   color: #38470b;
   background-color: transparent;
@@ -277,9 +286,8 @@ html {
   gap: 4px;
 }
 
-.vanilla-calendar-months__month, .vanilla-calendar-years__year {
-  color: #38470b !important;
-  background-color: rgba(56, 71, 11, 0.2);
+.vanilla-calendar-days {
+  column-gap: 9px !important;
 }
 
 .success {
@@ -291,7 +299,7 @@ html {
 }
 
 .booking {
-  display: block;
+  display: none;
 }
 
 .alert .container {
@@ -425,6 +433,8 @@ html {
 }
 .booking .info .bookingProcess li p {
   margin-top: 12px;
+}
+
 main {
   display: flex;
   justify-content: center;
