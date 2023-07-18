@@ -20,30 +20,12 @@
   height: 100%;
 }
 
-.hotelLogo {
-}
-
-.hotelInfo {
-}
-
-.hotelName {
-}
-
 .hotelConnectInfo {
   display: flex;
   flex-direction: column;
   gap: 6px 0;
   margin-top: 16px;
   font-weight: 300;
-}
-
-.hotelAddress {
-}
-
-.hotelTel {
-}
-
-.hotelEmail {
 }
 
 .hotelRoomList {
@@ -59,6 +41,9 @@
   width: 275px;
   height: 275px;
   position: relative;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: cover;
 
   img {
     width: 100%;
@@ -75,12 +60,12 @@
 }
 
 .hotelRoomMask {
+  opacity: 0.6;
   display: flex;
   justify-content: center;
   align-items: center;
   // background-color: rgba($primary, 0.6);
   background-color: $primary;
-  opacity: 0;
   width: 275px;
   height: 275px;
   font-size: 19px;
@@ -88,8 +73,4 @@
   top: 0;
   left: 0;
   transition: 0.3s;
-}
-
-.hotelRoomName {
-  opacity: 1;
 }

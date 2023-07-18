@@ -448,6 +448,9 @@ main {
   width: 275px;
   height: 275px;
   position: relative;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: cover;
 }
 .hotelRoomItem img {
   width: 100%;
@@ -461,11 +464,11 @@ main {
 }
 
 .hotelRoomMask {
+  opacity: 0.6;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #38470b;
-  opacity: 0;
   width: 275px;
   height: 275px;
   font-size: 19px;
@@ -473,8 +476,4 @@ main {
   top: 0;
   left: 0;
   transition: 0.3s;
-}
-
-.hotelRoomName {
-  opacity: 1;
 }
