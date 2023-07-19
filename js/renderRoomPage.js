@@ -66,8 +66,13 @@ function renderRoomPage(){
           <div class="reSearch fz-14">重新選取</div>
         </div>
       `
+      initializeCalendar();
+
     }
+    
+    
   })
+
 }
 
 //房間內容icon渲染
@@ -222,3 +227,4 @@ function bookingChangeIcon(){
   return str
   
 }
+

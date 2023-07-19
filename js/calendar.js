@@ -4,6 +4,17 @@
 
     const options = {
         type: 'multiple',
+        actions: {
+            changeToInput(e, HTMLInputElement, dates, time, hours, minutes, keeping) {
+                dates.sort((a,b)=>+new Date(a) - +new Date(b));
+                // console.log(dates)
+                if(dates.length===1){
+                    HTMLInputElement.value = dates[0]
+                }else{
+                HTMLInputElement.value = `${dates[0]} - ${dates[dates.length-1]}`;
+                }
+            }
+        },
         CSSClasses: {
             dayBtn: 'dayBtn',
             dayBtnToday: 'dayBtnToday',
@@ -66,12 +77,21 @@
         }
     }
 
+    //渲染日曆disable
+    function initializeCalendar(obj) {
+        calendar = new VanillaCalendar('#calendar', options);
+        calendar.init();
+
+        calendar.settings.range.disabled = obj;
+        calendar.update();
+    }
 
     document.addEventListener('DOMContentLoaded', () => {
     calendar = new VanillaCalendar('#calendar', options);
         
         calendar.init();
 
+        // renderRoomPage()
 
     });
 
