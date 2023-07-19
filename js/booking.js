@@ -15,7 +15,10 @@ function bookingPopUp(e){
   // console.log(e.target.getAttribute('class'))
 
   let getClass = e.target.getAttribute('class');
-  if(getClass.includes('bookingButton')) return booking.style.display='block';
+  if(getClass.includes('bookingButton')) {
+    booking.style.display='block';
+    renderBookingPage()
+  };
   if(getClass.includes('submit')) {
     success.style.display='block';
     booking.style.display='none';
