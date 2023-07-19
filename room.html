@@ -251,40 +251,9 @@
       </div>
     </main>
 
-    <!-- 預約成功，預設隱藏 -->
-    <section class="alert success" data-popUpBtn="0">
-      <div class="container">
-        <div class="pic">
-          <img class="bg" src="../img/success/surface1-10@2x.png" />
-          <img class="check" src="../img/success/surface1-11@2x.png" />
-        </div>
-        <h2 class="fz-50">預約成功</h2>
-        <p class="fz-18">
-          請留意簡訊發送訂房通知，入住當日務必出示此訂房通知，<br />
-          若未收到簡訊請來電確認，謝謝您
-        </p>
-        <img class="close" data-close="0" src="img/room/icons8-cancel-5@2x.png" alt="close">
-      </div>
-    </section>
-
-    <!-- 預約失敗，預設隱藏 -->
-    <section class="alert fail" data-popUpBtn="1">
-      <div class="container">
-        <div class="pic">
-          <img class="bg" src="../img/success/surface1-10@2x.png" />
-          <img class="cross" src="../img/fail/icons8-cancel-5@2x.png" />
-        </div>
-        <h2 class="fz-50">預約失敗</h2>
-        <p class="fz-18">
-          哎呀！晚了一步！您預約的日期已經被預約走了，<br />
-          再看看其它房型吧
-        </p>
-        <img class="close" data-close="1" src="img/room/icons8-cancel-5@2x.png" alt="close">
-      </div>
-    </section>
 
     <!-- 預約畫面，預設隱藏 -->
-    <section class="booking" data-popUpBtn="2">
+    <section class="booking" data-popUpBtn="0">
       <div class='container'>
         <div class="customer">
           <form>
@@ -392,9 +361,42 @@
             </li>
           </ul>
         </div>
-        <img class="close" data-close="3" src="img/room/icons8-cancel.svg" alt="close">
+        <img class="close" data-close="0" src="img/room/icons8-cancel.svg" alt="close">
       </div>
     </section> 
+
+    <!-- 預約成功，預設隱藏 -->
+    <section class="alert success" data-popUpBtn="1">
+      <div class="container">
+        <div class="pic">
+          <img class="bg" src="../img/success/surface1-10@2x.png" />
+          <img class="check" src="../img/success/surface1-11@2x.png" />
+        </div>
+        <h2 class="fz-50">預約成功</h2>
+        <p class="fz-18">
+          請留意簡訊發送訂房通知，入住當日務必出示此訂房通知，<br />
+          若未收到簡訊請來電確認，謝謝您
+        </p>
+        <img class="close" data-close="1" src="img/room/icons8-cancel-5@2x.png" alt="close">
+      </div>
+    </section>
+
+    <!-- 預約失敗，預設隱藏 -->
+    <section class="alert fail" data-popUpBtn="2">
+      <div class="container">
+        <div class="pic">
+          <img class="bg" src="../img/success/surface1-10@2x.png" />
+          <img class="cross" src="../img/fail/icons8-cancel-5@2x.png" />
+        </div>
+        <h2 class="fz-50">預約失敗</h2>
+        <p class="fz-18">
+          哎呀！晚了一步！您預約的日期已經被預約走了，<br />
+          再看看其它房型吧
+        </p>
+        <img class="close" data-close="2" src="img/room/icons8-cancel-5@2x.png" alt="close">
+      </div>
+    </section>
+
     
 
 
@@ -403,7 +405,7 @@
     <!-- Plugin JS -->
     <script src="https://cdn.jsdelivr.net/npm/@uvarov.frontend/vanilla-calendar/build/vanilla-calendar.min.js" defer></script>
     <script src="js/calendar.js"></script>
-    <script src="js/room.js"></script>
+    <script src="js/reservation.js"></script>
     <script src="js/renderRoomPage.js"></script>
   </body>
 </html>
