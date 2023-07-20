@@ -24,16 +24,16 @@ main {
   width: 100%;
   height: 100vh;
 
-  // &::after {
-  //   content: "";
-  //   position: absolute;
-  //   left: 0;
-  //   top: 0;
-  //   width: 100%;
-  //   height: 100%;
-  //   z-index: 5;
-  //   background-image: linear-gradient(180deg, #ffffff00 30%, $light 100%);
-  // }
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(180deg, #ffffff00 30%, $light 100%);
+  }
 
   .swiper-slide {
     background-repeat: no-repeat;
@@ -60,43 +60,38 @@ main {
 
 .photoZoomIn {
   position: absolute;
-  z-index: 999;
+  z-index: 20;
+  overflow: hidden;
 }
+
 .zoomBackdrop {
-  /* display: none; */
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   margin: 0;
   padding: 0;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
-  background-color: RGBA(0, 255, 255, 0.5);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 72px;
+  background-color: RGBA(0, 0, 0, 0.5);
   box-sizing: border-box;
-  position: relative;
 
-  img {
-    width: auto;
-    height: 90vh;
-    /* 比例會壞掉。 */
+  .zoomPhoto {
+    img {
+      width: auto;
+      height: 90vh;
+    }
   }
 }
 
-.zoomBackdrop::after {
-  content: "X";
-  position: absolute;
-  right: 12px;
-  top: 12px;
-  font-size: 30px;
-  line-height: 30px;
-}
-
-.zoomPrevArrow {
-  font-size: 72px;
-}
+.zoomPrevArrow,
 .zoomNextArrow {
-  font-size: 72px;
+  width: 30px;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 //內容
@@ -105,7 +100,7 @@ main {
   flex-direction: column;
   align-items: center;
   position: absolute;
-  z-index: 5;
+  z-index: 10;
 }
 
 .backRoomList {
