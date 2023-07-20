@@ -97,7 +97,7 @@ function roomChangeIcon(){
   // render畫面
   let str = '';
   sortedAry.forEach((item, index)=>{
-    if(item.YN===true){
+    if(item.YN){
       str+=`
         <li>
           <div class="roomFacilityIcon">
@@ -115,26 +115,25 @@ function roomChangeIcon(){
           <p class="roomFacilityTitle fz-10">${item.name}</p>
         </li>
       `
+    }else{
+      str+=`
+          <li class='iconOpacityEffect'>
+            <div class="roomFacilityIcon">
+              <img
+                class="FacilityIconMain"
+                src="./img/room/icon/icon-${item.order}.svg"
+                alt="${item.name}"
+              />
+              <img
+                class="FacilityIconSmall"
+                src="./img/room/icon/icon-0-cancel.svg"
+                alt="icon-0-cancel"
+              />
+            </div>
+            <p class="roomFacilityTitle fz-10">${item.name}</p>
+          </li>
+        `
     }
-  if(item.YN===false){
-    str+=`
-        <li class='iconOpacityEffect'>
-          <div class="roomFacilityIcon">
-            <img
-              class="FacilityIconMain"
-              src="./img/room/icon/icon-${item.order}.svg"
-              alt="${item.name}"
-            />
-            <img
-              class="FacilityIconSmall"
-              src="./img/room/icon/icon-0-cancel.svg"
-              alt="icon-0-cancel"
-            />
-          </div>
-          <p class="roomFacilityTitle fz-10">${item.name}</p>
-        </li>
-      `
-  }
 
   })
 
@@ -201,7 +200,9 @@ function renderBookingPage(){
               (僅接受VISA.JCB.銀聯卡)</p>
             </li>
           </ul>
-        `
+        `;
+
+      getDates()
     }
   })
 
@@ -213,13 +214,14 @@ function renderBookingPage(){
 //訂房icon渲染
 function bookingChangeIcon(){
   let ary = chAry.filter((item)=>{
-    return item.YN===true
+    return item.YN
   })
   // console.log(ary)
-  let str = ary.map((item, index)=>{
-    return `
+  let str = '';
+  ary.forEach((item, index)=>{
+    str+= `
       <li>
-        <img src="../img/room/icon/icon-${index+1}.svg">
+        <img src="../img/room/icon/icon-${index+1}.svg" alt='${item.name}'>
         <p class="fz-10">${item.name}</p>
       </li>
     `
