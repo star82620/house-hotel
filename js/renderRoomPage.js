@@ -67,6 +67,7 @@ function renderRoomPage(){
         </div>
       `
       initializeCalendar();
+      // initializeInputCalendar();
 
     }
     
@@ -202,13 +203,11 @@ function renderBookingPage(){
           </ul>
         `;
 
-      renderSelectedDates()
+      renderSelectedDates();
+      bookingAmount();
     }
   })
 
-
-  
-  
 }
 
 //訂房icon渲染
@@ -230,3 +229,50 @@ function bookingChangeIcon(){
   
 }
 
+//訂房客戶住房天數
+function renderBookingDayAndNight(holidaysCount, normalDaysCount, amount){
+  const total = document.querySelector('.total');
+  // console.log(days)
+  let str = '';
+  if(selectedDates.length===0){
+    str = `
+    <div class="total">
+      <p class="days">${selectedDates.length}天</p>
+      總計<br/>
+      <h4 class="fz-26">$0</h4>
+    </div>
+  `
+  }else{
+    str = `
+      <div class="total">
+        <p class="days">${selectedDates.length}天，${holidaysCount}晚平日，${normalDaysCount}晚假日</p>
+        總計<br/>
+        <h4 class="fz-26">$${amount}</h4>
+      </div>
+    `
+  }
+  total.innerHTML = str;
+}
+
+//計算訂房價格
+function bookingAmount(){
+  console.log()
+  // console.log(newFilterHolidays)
+  let holidaysCount = 0;
+  let normalDaysCount = 0;
+  let filterSelectedDates = selectedDates.slice(0,-1)
+  console.log(filterSelectedDates)
+  filterSelectedDates.forEach((item,index)=>{
+    if(filterSelectedDates.includes(item)){
+      holidaysCount++
+    }else{
+      normalDaysCount++
+    }
+  });
+  console.log(holidaysCount, normalDaysCount)
+  let holidaysAmount = holidaysCount*roomDes.holidayPrice;
+  let normalDaysAmount = normalDaysCount*roomDes.normalDayPrice;
+  let amount = holidaysAmount + normalDaysAmount;
+  
+  renderBookingDayAndNight(holidaysCount, normalDaysCount, amount)
+}
