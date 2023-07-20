@@ -261,18 +261,22 @@
               <li>
                 姓名
               <input type="text" name="name" class="name">
+              <span class="nameMessage"></span>
               </li>
               <li>
               手機號碼
               <input type="text" name="phone" class="phone">
+              <span class="phoneMessage"></span>
               </li>
               <li>
               入住日期
               <input type="text" name="enterDate" class="enterDate">
+              <span class="enterDateMessage"></span>
               </li>
               <li>
               退房日期
               <input type="text" name="leaveDate" class="leaveDate">
+              <span class="leaveDateMessage"></span>
               </li>
             </ul>
             <p class="days">2天，1晚平日</p>
@@ -403,7 +407,9 @@
 
 
     <!-- Plugin JS -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@uvarov.frontend/vanilla-calendar/build/vanilla-calendar.min.js" defer></script>
+    <script src="js/validate.js"></script>
     <script src="js/calendar.js"></script>
     <script src="js/booking.js"></script>
     <script src="js/renderRoomPage.js"></script>

@@ -32,7 +32,10 @@ function addBookingDates(){
   })
   .then((res)=>{
       console.log(res)
-  
+      customerName.value = '';
+      customerPhone.value = '';
+      BookingEnterDate.value = '';
+      BookingLeaveDate.value = '';
   init();
   }
   )
@@ -60,11 +63,12 @@ function bookingPopUp(e){
   let getClass = e.target.getAttribute('class');
   if(getClass.includes('bookingButton')) {
     booking.style.display='block';
-    renderBookingPage()
+    renderBookingPage();
+    // BookingEnterDate.addEventListener('click', inputCalendar);
+    // BookingLeaveDate.addEventListener('click', inputCalendar);
   };
   if(getClass.includes('submit')) {
-    checkBookingFull()
-
+    validateCustomerInfo();
   }
   if(getClass.includes('fail')) {
     fail.style.display='block';
