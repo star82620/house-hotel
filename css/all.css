@@ -700,6 +700,10 @@ main {
   color: #949c7c;
 }
 
+.iconOpacityEffect {
+  opacity: 0.3;
+}
+
 #hotel {
   display: flex;
   align-items: center;
