@@ -1,0 +1,236 @@
+@import "guildline";
+
+main {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.roomCoverContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  height: 100%;
+  // background: url("../img/room/photo-1501876725168-00c445821c9e.png");
+  // background-repeat: no-repeat;
+  // background-position: top left;
+  // background-size: cover;
+}
+
+.roomCoverSwiper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   left: 0;
+  //   top: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   z-index: 5;
+  //   background-image: linear-gradient(180deg, #ffffff00 30%, $light 100%);
+  // }
+
+  .swiper-slide {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+
+  .swiper-pagination {
+    bottom: 48px;
+  }
+
+  .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    border: 1px solid $primary;
+    background-color: transparent;
+    opacity: 1;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: $primary;
+  }
+}
+
+.photoZoomIn {
+  position: absolute;
+  z-index: 999;
+}
+.zoomBackdrop {
+  /* display: none; */
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: RGBA(0, 255, 255, 0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 72px;
+  box-sizing: border-box;
+  position: relative;
+
+  img {
+    width: auto;
+    height: 90vh;
+    /* 比例會壞掉。 */
+  }
+}
+
+.zoomBackdrop::after {
+  content: "X";
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  font-size: 30px;
+  line-height: 30px;
+}
+
+.zoomPrevArrow {
+  font-size: 72px;
+}
+.zoomNextArrow {
+  font-size: 72px;
+}
+
+//內容
+.roomCoverInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  z-index: 5;
+}
+
+.backRoomList {
+  align-self: start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -32px;
+  gap: 10px;
+
+  .arrowLeft {
+    height: 16px;
+  }
+
+  a {
+    color: $primary;
+    font-weight: 300;
+  }
+}
+
+//以下沒動
+
+.roomPriceContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  margin-top: 450px;
+  gap: 20px;
+}
+
+.roomPrice {
+  line-height: 100%;
+}
+
+.bookingButton {
+  padding: 8px 64px;
+  margin-top: 16px;
+  background: $primary;
+  color: $light;
+  font-weight: 600;
+}
+
+.roomContentContainer {
+  width: 60%;
+}
+
+.roomContent {
+  margin-left: 30px;
+  width: 640px;
+}
+
+.roomContentTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-top: 107px;
+}
+
+.roomName {
+  font-weight: 600;
+}
+
+.roomSummary {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.roomCheckTime {
+  margin-top: 38px;
+  line-height: 24px;
+}
+
+.roomNotice {
+  margin-top: 35px;
+  font-weight: 300;
+  line-height: 24px;
+
+  li {
+    list-style: disc;
+  }
+}
+
+.roomFacilities {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 45px;
+  gap: 36px 25px;
+}
+
+.roomFacilityIcon {
+  display: flex;
+  align-items: start;
+  gap: 0 4px;
+}
+.facilityIconMain {
+  width: 40px;
+  height: auto;
+}
+
+.facilityIconSmall {
+  width: 15px;
+  height: auto;
+}
+
+.roomFacilityTitle {
+  margin-top: 7px;
+  text-align: center;
+}
+
+.roomBookingState {
+  margin-top: 28px;
+
+  h3 {
+    font-weight: 500;
+  }
+}
+
+.bookingCalender {
+  margin-top: 8px;
+  width: 100%;
+  height: 200px;
+  border: 1px solid;
+}
+
+.reSearch {
+  margin-top: 6px;
+  color: $tertiary;
+}
