@@ -1,22 +1,12 @@
 @import "guildline";
 
-main {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 100vh;
-}
-
 .roomCoverContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 40%;
   height: 100%;
-  // background: url("../img/room/photo-1501876725168-00c445821c9e.png");
-  // background-repeat: no-repeat;
-  // background-position: top left;
-  // background-size: cover;
+  cursor: pointer;
 }
 
 .roomCoverSwiper {
@@ -75,23 +65,23 @@ main {
   height: 100vh;
   background-color: RGBA(0, 0, 0, 0.5);
   box-sizing: border-box;
+  cursor: pointer;
 
   .zoomPhoto {
-    img {
-      width: auto;
-      height: 90vh;
-    }
+    width: auto;
+    height: 90vh;
+    cursor: auto;
   }
 }
 
 .zoomPrevArrow,
 .zoomNextArrow {
   width: 30px;
+  height: auto;
+}
 
-  img {
-    width: 100%;
-    height: auto;
-  }
+.disable {
+  opacity: 0.3;
 }
 
 //內容
@@ -119,113 +109,4 @@ main {
     color: $primary;
     font-weight: 300;
   }
-}
-
-//以下沒動
-
-.roomPriceContainer {
-  display: flex;
-  flex-direction: row;
-  align-items: end;
-  margin-top: 450px;
-  gap: 20px;
-}
-
-.roomPrice {
-  line-height: 100%;
-}
-
-.bookingButton {
-  padding: 8px 64px;
-  margin-top: 16px;
-  background: $primary;
-  color: $light;
-  font-weight: 600;
-}
-
-.roomContentContainer {
-  width: 60%;
-}
-
-.roomContent {
-  margin-left: 30px;
-  width: 640px;
-}
-
-.roomContentTitle {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  margin-top: 107px;
-}
-
-.roomName {
-  font-weight: 600;
-}
-
-.roomSummary {
-  margin-bottom: 10px;
-  font-weight: 500;
-}
-
-.roomCheckTime {
-  margin-top: 38px;
-  line-height: 24px;
-}
-
-.roomNotice {
-  margin-top: 35px;
-  font-weight: 300;
-  line-height: 24px;
-
-  li {
-    list-style: disc;
-  }
-}
-
-.roomFacilities {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 45px;
-  gap: 36px 25px;
-}
-
-.roomFacilityIcon {
-  display: flex;
-  align-items: start;
-  gap: 0 4px;
-}
-.facilityIconMain {
-  width: 40px;
-  height: auto;
-}
-
-.facilityIconSmall {
-  width: 15px;
-  height: auto;
-}
-
-.roomFacilityTitle {
-  margin-top: 7px;
-  text-align: center;
-}
-
-.roomBookingState {
-  margin-top: 28px;
-
-  h3 {
-    font-weight: 500;
-  }
-}
-
-.bookingCalender {
-  margin-top: 8px;
-  width: 100%;
-  height: 200px;
-  border: 1px solid;
-}
-
-.reSearch {
-  margin-top: 6px;
-  color: $tertiary;
 }
