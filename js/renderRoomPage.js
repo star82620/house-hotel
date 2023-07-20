@@ -245,7 +245,7 @@ function renderBookingDayAndNight(holidaysCount, normalDaysCount, amount){
   }else{
     str = `
       <div class="total">
-        <p class="days">${selectedDates.length}天，${holidaysCount}晚平日，${normalDaysCount}晚假日</p>
+        <p class="days">${selectedDates.length}天，${normalDaysCount}晚平日，${holidaysCount}晚假日</p>
         總計<br/>
         <h4 class="fz-26">$${amount}</h4>
       </div>
@@ -263,7 +263,7 @@ function bookingAmount(){
   let filterSelectedDates = selectedDates.slice(0,-1)
   console.log(filterSelectedDates)
   filterSelectedDates.forEach((item,index)=>{
-    if(filterSelectedDates.includes(item)){
+    if(newFilterHolidays.includes(item)){
       holidaysCount++
     }else{
       normalDaysCount++
