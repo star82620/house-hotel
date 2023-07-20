@@ -1,19 +1,37 @@
+    const BookingEnterDate = document.querySelector('.enterDate');
+    const BookingLeaveDate = document.querySelector('.leaveDate');
+    // console.log(BookingEnterDate, BookingLeaveDate)
 
     
     let calendar;
+    let selectedDates = [];
+
+
+    function renderSelectedDates(){
+        // console.log(selectedDates)
+        if(selectedDates.length>0){
+            BookingEnterDate.value=selectedDates[0];
+            BookingLeaveDate.value=selectedDates[selectedDates.length-1];
+        }
+    }
 
     const options = {
         type: 'multiple',
         actions: {
-            changeToInput(e, HTMLInputElement, dates, time, hours, minutes, keeping) {
-                dates.sort((a,b)=>+new Date(a) - +new Date(b));
-                // console.log(dates)
-                if(dates.length===1){
-                    HTMLInputElement.value = dates[0]
-                }else{
-                HTMLInputElement.value = `${dates[0]} - ${dates[dates.length-1]}`;
-                }
-            }
+            clickDay(event, dates) {
+                dates.sort((a, b) => +new Date(a) - +new Date(b)) //預防點擊較晚日期排在最前面
+            // console.log(dates); //ex. ['2023-07-22']
+            selectedDates = dates;
+            },
+            // changeToInput(e, HTMLInputElement, dates, time, hours, minutes, keeping) {
+            //     dates.sort((a,b)=>+new Date(a) - +new Date(b));
+            //     console.log(dates)
+            //     if(dates.length===1){
+            //         HTMLInputElement.value = dates[0]
+            //     }else{
+            //     HTMLInputElement.value = `${dates[0]} - ${dates[dates.length-1]}`;
+            //     }
+            // }
         },
         CSSClasses: {
             dayBtn: 'dayBtn',

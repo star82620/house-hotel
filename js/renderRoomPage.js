@@ -202,7 +202,7 @@ function renderBookingPage(){
           </ul>
         `;
 
-      getDates()
+      renderSelectedDates()
     }
   })
 
