@@ -6,7 +6,6 @@ const leaveDateMessage = document.querySelector(".leaveDateMessage");
 
 function validateCustomerInfo() {
   const result = validate(form, constraints);
-  // console.log(result);
 
   if (!result) {
     nameMessage.innerHTML = "";
