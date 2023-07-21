@@ -66,6 +66,12 @@ main {
   background: $primary;
   color: $light;
   font-weight: 600;
+  cursor: pointer;
+
+  &:hover,
+  &:active {
+    background: $tertiary;
+  }
 }
 
 .roomContentContainer {

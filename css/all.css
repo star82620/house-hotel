@@ -276,6 +276,10 @@ main {
   background: #38470b;
   color: #fcffff;
   font-weight: 600;
+  cursor: pointer;
+}
+.bookingButton:hover, .bookingButton:active {
+  background: #949c7c;
 }
 
 .roomContentContainer {
@@ -916,18 +920,34 @@ main {
   height: 100%;
 }
 #hotelHome .swiper img {
-  width: 100%;
+  width: 100;
+  height: 100vh;
 }
 #hotelHome .swiper-slide {
   position: relative;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: cover;
+}
+#hotelHome .swiper-slide:nth-child(1) {
+  background-image: url(../img/index/photo-househotel-1@2x.png);
+}
+#hotelHome .swiper-slide:nth-child(2) {
+  background-image: url(../img/index/photo-househotel-2@2x.png);
+}
+#hotelHome .swiper-slide:nth-child(3) {
+  background-image: url(../img/index/photo-househotel-3@2x.png);
+}
+#hotelHome .swiper-slide:nth-child(4) {
+  background-image: url(../img/index/photo-househotel-4@2x.png);
 }
 #hotelHome .swiper-slide::after {
   content: "";
-  width: 100%;
-  height: 100%;
   position: absolute;
   left: 0;
   top: 0;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
 }
 #hotelHome .swiper-pagination {
