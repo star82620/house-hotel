@@ -7,6 +7,7 @@ let allRoomData = []; //allRoomApi 抓到的全部房間資料
 let roomDes = []; //個別房間的詳細資料
 let roomBooking = []; //個別房間的預約資料
 let urlId = ""; //url 上的 id
+let dates = []; //bookingDate
 
 function init() {
   const allRoomApi = "https://challenge.thef2e.com/api/thef2e2019/stage6/rooms";
@@ -54,7 +55,7 @@ function getSpecifyRoomData() {
       console.log("當下房間的預約狀態", roomBooking);
       renderRoomPage();
 
-      let dates = roomBooking.map(item => item.date);
+      dates = roomBooking.map(item => item.date);
       // console.log(dates)
 
       initializeCalendar(dates)

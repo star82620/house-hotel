@@ -123,14 +123,15 @@
         color: $secondary;
       }
     }
-    .days{
-      color: $tertiary;
-      margin: 16px 0;
-    }
     .total{
-      border-top: 1px solid $tertiary;
-      padding-top: 8px;
       text-align: right;
+      .days{
+        color: $tertiary;
+        padding: 16px 0;
+        margin-bottom: 8px;
+        text-align: left;
+        border-bottom: 1px solid $tertiary;
+      }
       h4{
         line-height: 36px;
       }

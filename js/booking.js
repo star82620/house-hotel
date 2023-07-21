@@ -3,11 +3,57 @@ const bookingButton = document.querySelector('.bookingButton');
 const booking = document.querySelector('.booking');
 const success = document.querySelector('.success');
 const fail = document.querySelector('.fail');
-const submit = document.querySelector('.submit')
-const popUpCloseBtn = document.querySelectorAll('.close')
-const popUpScreen = document.querySelectorAll('[data-popUpBtn]')
+const submit = document.querySelector('.submit');
+const popUpCloseBtn = document.querySelectorAll('.close');
+const popUpScreen = document.querySelectorAll('[data-popUpBtn]');
+const customerName = document.querySelector('.name');
+const customerPhone = document.querySelector('.phone');
 
-// console.log(popUpScreen)
+
+// console.log(name, phone)
+
+//新增訂房日期API
+function addBookingDates(){
+  console.log(selectedDates)
+  let jsonStyle = {
+  name: customerName.value,
+  tel: customerPhone.value,
+  date: selectedDates,
+  };
+
+  fetch('https://challenge.thef2e.com/api/thef2e2019/stage6/room/3Elqe8kfMxdZv5xFLV4OUeN6jhmxIvQSTyj4eTgIowfIRvF4rerA2Nuegzc2Rgwu', {
+      method: "POST",
+      headers: {
+          Authorization:
+          "Bearer QHcLaqsSDAC5HS0fQ3wEiLKguA268w8f3Pz2LgosjLybpkztoGQXzwuHPAgO",
+          "Content-Type": "application/json",
+      },
+      body: JSON.stringify(jsonStyle)
+  })
+  .then((res)=>{
+      console.log(res)
+      customerName.value = '';
+      customerPhone.value = '';
+      BookingEnterDate.value = '';
+      BookingLeaveDate.value = '';
+  init();
+  }
+  )
+  .catch((err)=>console.log(err.response.data.message))
+}
+
+//確認選擇日期是否包含已訂房日
+function checkBookingFull(){
+  // console.log(selectedDates)
+  // console.log(dates)
+  if(selectedDates.includes(dates)){
+    fail.style.display='block';
+  }else{
+    addBookingDates()
+    success.style.display='block';
+    booking.style.display='none';
+  }
+}
 
 //顯示彈跳視窗
 function bookingPopUp(e){
@@ -17,11 +63,12 @@ function bookingPopUp(e){
   let getClass = e.target.getAttribute('class');
   if(getClass.includes('bookingButton')) {
     booking.style.display='block';
-    renderBookingPage()
+    renderBookingPage();
+    // BookingEnterDate.addEventListener('click', inputCalendar);
+    // BookingLeaveDate.addEventListener('click', inputCalendar);
   };
   if(getClass.includes('submit')) {
-    success.style.display='block';
-    booking.style.display='none';
+    validateCustomerInfo();
   }
   if(getClass.includes('fail')) {
     fail.style.display='block';
