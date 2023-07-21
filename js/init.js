@@ -56,12 +56,12 @@ function getSpecifyRoomData() {
 
       console.log("當下房間的詳細資訊", roomDes);
       console.log("當下房間的預約狀態", roomBooking);
-      // renderRoomPage();
+      renderRoomPage();
 
       dates = roomBooking.map((item) => item.date);
       // console.log(dates)
 
-      // initializeCalendar(dates)
+      initializeCalendar(dates)
       renderRoomCover();
     });
 }

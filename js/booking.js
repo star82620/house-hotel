@@ -97,16 +97,20 @@ function popUpClose(e) {
   let closeNum = e.target.dataset.close;
   // console.log(closeNum)
   // console.log(popUpScreen[closeNum])
-  popUpScreen[closeNum].style.display = "none";
   // console.log(calendar)
 
   const isBooking = e.target.classList.contains("booking");
   const isAlertElement = e.target.classList.contains("alert");
-  if (isBooking) {
-    booking.style.display = "none";
-  }
-  if (isAlertElement) {
-    alertElement.style.display = "none";
+
+  if (closeNum) {
+    popUpScreen[closeNum].style.display = "none";
+  } else {
+    if (isBooking) {
+      booking.style.display = "none";
+    }
+    if (isAlertElement) {
+      alertElement.style.display = "none";
+    }
   }
 }
 
