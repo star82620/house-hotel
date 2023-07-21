@@ -240,6 +240,11 @@ main {
   justify-content: center;
   align-items: center;
   gap: 10px;
+  background: rgba(255, 255, 255, 0.6666666667);
+  color: #38470b;
+}
+.backRoomList:hover {
+  background: #fff;
 }
 .backRoomList .arrowLeft {
   height: 16px;
@@ -254,6 +259,11 @@ main {
   align-items: end;
   margin-top: 450px;
   gap: 20px;
+}
+
+.roomPriceSlash {
+  font-size: 24px;
+  font-weight: 300;
 }
 
 .roomPrice {

@@ -27,6 +27,12 @@ main {
   justify-content: center;
   align-items: center;
   gap: 10px;
+  background: #ffffffaa;
+  color: $primary;
+
+  &:hover {
+    background: #fff;
+  }
 
   .arrowLeft {
     height: 16px;
@@ -43,6 +49,11 @@ main {
   align-items: end;
   margin-top: 450px;
   gap: 20px;
+}
+
+.roomPriceSlash {
+  font-size: 24px;
+  font-weight: 300;
 }
 
 .roomPrice {
