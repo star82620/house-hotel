@@ -5,9 +5,10 @@
 @import "common";
 
 // room
-@import 'calendar';
-@import "alert";
 @import "room";
+@import "room-swipe";
+@import "calendar";
+@import "alert";
 
 // index
 @import "index";

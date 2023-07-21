@@ -1,4 +1,5 @@
 // 把所有房間資料渲染進 roomList
+const roomList = document.querySelector(".hotelRoomList");
 
 function renderRoomList() {
   let roomHtml = "";
