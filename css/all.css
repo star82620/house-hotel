@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -299,34 +300,45 @@ main {
 
 .roomNotice {
   margin-top: 35px;
+  margin-left: 14px;
   font-weight: 300;
   line-height: 24px;
 }
 .roomNotice li {
-  list-style: disc;
+  list-style-type: "・";
 }
 
 .roomFacilities {
   display: flex;
   flex-wrap: wrap;
   margin-top: 45px;
+  margin-left: 12px;
   gap: 36px 25px;
+}
+.roomFacilities li {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .roomFacilityIcon {
   display: flex;
-  align-items: start;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
   gap: 0 4px;
+  min-width: 60px;
 }
 
 .facilityIconMain {
-  width: 40px;
+  max-width: 40px;
   height: auto;
 }
 
 .facilityIconSmall {
   width: 15px;
   height: auto;
+  align-self: flex-start;
 }
 
 .roomFacilityTitle {
@@ -402,7 +414,7 @@ main {
 }
 
 .photoZoomIn {
-  position: absolute;
+  position: fixed;
   z-index: 20;
   overflow: hidden;
   width: 100%;
@@ -715,6 +727,18 @@ main {
   margin: 0;
   text-align: left;
 }
+.booking .customer .enterDateMessage,
+.booking .customer .leaveDateMessage {
+  position: relative;
+}
+.booking .customer .enterDateMessage::before,
+.booking .customer .leaveDateMessage::before {
+  content: "▾";
+  position: absolute;
+  right: 12px;
+  top: -27px;
+  color: #38470b;
+}
 .booking .customer .enterDate,
 .booking .customer .leaveDate {
   width: 100%;
@@ -814,7 +838,7 @@ main {
 
 .bookingInfoList li {
   line-height: 26px;
-  list-style: disc;
+  list-style-type: "・";
   list-style-position: inside;
 }
 

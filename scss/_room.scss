@@ -89,11 +89,12 @@ main {
 
 .roomNotice {
   margin-top: 35px;
+  margin-left: 14px;
   font-weight: 300;
   line-height: 24px;
 
   li {
-    list-style: disc;
+    list-style-type: "・";
   }
 }
 
@@ -101,22 +102,33 @@ main {
   display: flex;
   flex-wrap: wrap;
   margin-top: 45px;
+  margin-left: 12px;
   gap: 36px 25px;
+
+  li {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 }
 
 .roomFacilityIcon {
   display: flex;
-  align-items: start;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
   gap: 0 4px;
+  min-width: 60px;
 }
 .facilityIconMain {
-  width: 40px;
+  max-width: 40px;
   height: auto;
 }
 
 .facilityIconSmall {
   width: 15px;
   height: auto;
+  align-self: flex-start;
 }
 
 .roomFacilityTitle {

@@ -1,8 +1,78 @@
+======================== ★ V
+檔案：_room.html
+說明：加入
+內容：
+    <!-- 點擊圖片放大檢視 -->
+    <div class="photoZoomIn"></div>
 
-=======
 
+======================== ★ V
 檔案：_room.scss
 說明：版面調整
 內容：
 1. 移除 .backRoomList 的 margin-top
-2. 
+2. 調整右側內容尺寸
+.roomContent {
+  margin-left: 30px;
+  max-width: 640px;
+}
+
+3. 調整項目符號
+.roomNotice {
+  margin-left: 14px;
+  
+  li {
+    list-style-type: "・";
+  }
+}
+
+4. 增加間距
+.roomFacilities {
+  margin-left: 12px;
+}
+
+======================== V
+檔案：_room-swipe.scss
+說明：把 position 改成 fixed
+內容：
+.photoZoomIn {
+  position: fixed;
+}
+
+======================== V
+檔案：booking.js
+說明：
+內容：
+1. 在 popUpClose 加上，讓 popup 取消時能夠正常滾動
+  document.body.style.overflow = "scroll";
+
+======================= V
+檔案：roomCoverSwiper.js
+說明：
+內容：
+在 closePopup 中 如果點擊加上
+document.body.style.overflow = "scroll";
+
+======================
+檔案：_alert.scss
+說明：調整項目符號
+內容：
+
+1. 調整項目符號
+.bookingInfoList li {
+  list-style-type: "・";
+}
+
+2. 增加小箭頭
+.enterDateMessage,
+.leaveDateMessage {
+  position: relative;
+
+  &::before {
+    content: "▾";
+    position: absolute;
+    right: 12px;
+    top: -27px;
+    color: $primary;
+  }
+}
