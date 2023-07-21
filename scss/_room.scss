@@ -26,7 +26,6 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 88px;
   gap: 10px;
 
   .arrowLeft {
@@ -64,6 +63,7 @@ main {
 
 .roomContent {
   margin-left: 30px;
+  max-width: 640px;
 }
 
 .roomContentTitle {
