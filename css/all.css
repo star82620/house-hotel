@@ -547,13 +547,13 @@ main {
 }
 
 .daySelectedLast {
-  background: linear-gradient(to left, #ffffff, rgba(56, 71, 11, 0.2));
+  background: linear-gradient(-90deg, #ffffff 50%, rgba(56, 71, 11, 0.2) 50%);
   border-radius: 0 100% 100% 0;
   font-weight: bold;
 }
 
 .daySelectedFirst {
-  background: linear-gradient(to right, #ffffff, rgba(56, 71, 11, 0.2));
+  background: linear-gradient(90deg, #ffffff 50%, rgba(56, 71, 11, 0.2) 50%);
   border-radius: 100% 0 0 100%;
   font-weight: bold;
 }
