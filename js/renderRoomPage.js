@@ -61,6 +61,8 @@ let chAry = [
 //房間內容渲染
 function renderRoomPage() {
   const roomContent = document.querySelector(".roomContent");
+  const roomPrice = document.querySelector('.roomPrice')
+
   // console.log(roomContent);
   // console.log(roomDes)
 
@@ -74,6 +76,8 @@ function renderRoomPage() {
       } else {
         item.people = `${roomDes.descriptionShort.GuestMin}-${roomDes.descriptionShort.GuestMax}`;
       }
+
+      roomPrice.textContent = `$${roomDes.normalDayPrice}`;
 
       roomContent.innerHTML = `
         <div class="roomContentTitle">
