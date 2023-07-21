@@ -100,7 +100,7 @@
     //日曆 計算日期
     function makeSelectedDates(dates){
         const startDate = new Date(dates[0]);
-        const endDate = new Date(dates[1]);
+        const endDate = new Date(dates[dates.length-1]);
         const datesInRange = [];
         let currentDate;
 
