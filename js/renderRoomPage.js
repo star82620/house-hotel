@@ -265,7 +265,7 @@ function bookingChangeIcon() {
   ary.forEach((item, index) => {
     str += `
       <li>
-        <img src="../img/room/icon/icon-${index + 1}.svg" alt='${item.name}'>
+        <img src="./img/room/icon/icon-${index + 1}.svg" alt='${item.name}'>
         <p class="fz-10">${item.name}</p>
       </li>
     `;
