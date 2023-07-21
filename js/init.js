@@ -23,7 +23,6 @@ function init() {
     .then((res) => res.json())
     .then((resJson) => {
       allRoomData = resJson.items;
-      console.log("所有房間", allRoomData);
 
       if (hotelHome) {
         renderRoomList(); //渲染全部房間列表（index.html）
@@ -54,14 +53,11 @@ function getSpecifyRoomData() {
       roomDes = resJson.room[0];
       roomBooking = resJson.booking;
 
-      console.log("當下房間的詳細資訊", roomDes);
-      console.log("當下房間的預約狀態", roomBooking);
       renderRoomPage();
 
       dates = roomBooking.map((item) => item.date);
-      // console.log(dates)
 
-      initializeCalendar(dates)
+      initializeCalendar(dates);
       renderRoomCover();
     });
 }

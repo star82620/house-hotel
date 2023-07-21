@@ -10,17 +10,13 @@ const popUpScreen = document.querySelectorAll("[data-popUpBtn]");
 const customerName = document.querySelector(".name");
 const customerPhone = document.querySelector(".phone");
 
-// console.log(name, phone)
-
 //新增訂房日期API
 function addBookingDates() {
-  console.log(selectedDates);
   let jsonStyle = {
     name: customerName.value,
     tel: customerPhone.value,
     date: selectedDates,
   };
-  console.log(jsonStyle)
 
   fetch(
     `https://challenge.thef2e.com/api/thef2e2019/stage6/room/${roomDes.id}`,
@@ -47,9 +43,6 @@ function addBookingDates() {
 
 //確認選擇日期是否包含已訂房日
 function checkBookingFull() {
-  // console.log(selectedDates)
-  // console.log(dates)
-
   for (let i = 0; i < selectedDates.length; i++) {
     if (dates.includes(selectedDates[i])) {
       fail.style.display = "block";
@@ -65,7 +58,6 @@ function checkBookingFull() {
 //顯示彈跳視窗
 function bookingPopUp(e) {
   e.stopPropagation();
-  // console.log(e.target.getAttribute('class'))
 
   let getClass = e.target.getAttribute("class");
   if (getClass.includes("bookingButton")) {
@@ -93,12 +85,8 @@ function bookingPopUp(e) {
 
 //關閉彈跳視窗
 function popUpClose(e) {
-  // console.log(e)
   e.stopPropagation();
   let closeNum = e.target.dataset.close;
-  // console.log(closeNum)
-  // console.log(popUpScreen[closeNum])
-  // console.log(calendar)
 
   const isBooking = e.target.classList.contains("booking");
   const isAlertElement = e.target.classList.contains("alert");

@@ -61,13 +61,9 @@ let chAry = [
 //房間內容渲染
 function renderRoomPage() {
   const roomContent = document.querySelector(".roomContent");
-  const roomPrice = document.querySelector('.roomPrice')
-
-  // console.log(roomContent);
-  // console.log(roomDes)
+  const roomPrice = document.querySelector(".roomPrice");
 
   ary.forEach((item, index) => {
-    // console.log(item)
     if (item.roomEn === roomDes.name) {
       if (
         roomDes.descriptionShort.GuestMin === roomDes.descriptionShort.GuestMax
@@ -127,18 +123,14 @@ function roomChangeIcon() {
   const roomFacilityIcons = document.querySelectorAll(".roomFacilityIcon");
 
   let amenities = roomDes.amenities;
-  // console.log(amenities)
 
   //放入amenities值
   Object.values(amenities).forEach((value, index) => {
-    // console.log(value)
     chAry[index].YN = value;
   });
-  // console.log(chAry)
 
   //排列render順序
   let sortedAry = chAry.sort((a, b) => a.order - b.order);
-  // console.log(sortedAry)
 
   // render畫面
   let str = "";
@@ -181,8 +173,6 @@ function roomChangeIcon() {
         `;
     }
   });
-
-  // console.log(roomFacilityIcons)
 
   return `
     <ul class="roomFacilities">
@@ -264,7 +254,6 @@ function bookingChangeIcon() {
   let ary = chAry.filter((item) => {
     return item.YN;
   });
-  // console.log(ary)
   let str = "";
   ary.forEach((item, index) => {
     str += `
@@ -280,7 +269,6 @@ function bookingChangeIcon() {
 //訂房客戶住房天數
 function renderBookingDayAndNight(holidaysCount, normalDaysCount, amount) {
   const total = document.querySelector(".total");
-  // console.log(days)
   let str = "";
   if (selectedDates.length === 0) {
     str = `
@@ -304,11 +292,9 @@ function renderBookingDayAndNight(holidaysCount, normalDaysCount, amount) {
 
 //計算訂房價格
 function bookingAmount() {
-  // console.log(newFilterHolidays)
   let holidaysCount = 0;
   let normalDaysCount = 0;
   let filterSelectedDates = selectedDates.slice(0, -1);
-  // console.log(filterSelectedDates)
   filterSelectedDates.forEach((item, index) => {
     if (newFilterHolidays.includes(item)) {
       holidaysCount++;
@@ -316,7 +302,6 @@ function bookingAmount() {
       normalDaysCount++;
     }
   });
-  // console.log(holidaysCount, normalDaysCount)
   let holidaysAmount = holidaysCount * roomDes.holidayPrice;
   let normalDaysAmount = normalDaysCount * roomDes.normalDayPrice;
   let amount = holidaysAmount + normalDaysAmount;
@@ -329,14 +314,11 @@ function reSearchSelectedDates() {
   calendar.selectedDates = [];
   calendar.update();
   selectedDates = [];
-  // console.log(calendar)
   renderSelectedDates();
   bookingAmount();
 }
 
 //測試刪除
-// deleteAll()
-
 function deleteAll() {
   fetch("https://challenge.thef2e.com/api/thef2e2019/stage6/rooms", {
     method: "DELETE",
@@ -345,10 +327,7 @@ function deleteAll() {
         "Bearer QHcLaqsSDAC5HS0fQ3wEiLKguA268w8f3Pz2LgosjLybpkztoGQXzwuHPAgO",
       "Content-Type": "application/json",
     },
-  })
-    .then((res) => {
-      console.log(res);
-      init();
-    })
-    .catch((err) => console.log(err.response.data.message));
+  }).then((res) => {
+    init();
+  });
 }
