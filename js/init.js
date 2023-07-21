@@ -1,8 +1,8 @@
 // init
 // 這一頁的 fetch api 有兩支： allRoomApi、specifyRoomAPI
 
-// const roomList = document.querySelector(".hotelRoomList"); // index.html 房間列表
-// const roomDetail = document.querySelector(".room-detail"); //room.html 個別房間的詳細資訊
+const roomPage = document.querySelector("#roomPage");
+const hotelHome = document.querySelector("#hotelHome");
 let allRoomData = []; //allRoomApi 抓到的全部房間資料
 let roomDes = []; //個別房間的詳細資料
 let roomBooking = []; //個別房間的預約資料
@@ -25,9 +25,12 @@ function init() {
       allRoomData = resJson.items;
       console.log("所有房間", allRoomData);
 
-      // renderRoomList(); //渲染全部房間列表（index.html）
-      getUrlId(); //抓取 url 上的 id
-      getSpecifyRoomData(); //get 個別房間資料（room.html）
+      if (hotelHome) {
+        renderRoomList(); //渲染全部房間列表（index.html）
+      } else if (roomPage) {
+        getUrlId(); //抓取 url 上的 id
+        getSpecifyRoomData(); //get 個別房間資料（room.html）
+      }
     });
 }
 
@@ -55,7 +58,7 @@ function getSpecifyRoomData() {
       console.log("當下房間的預約狀態", roomBooking);
       // renderRoomPage();
 
-      dates = roomBooking.map(item => item.date);
+      dates = roomBooking.map((item) => item.date);
       // console.log(dates)
 
       // initializeCalendar(dates)
