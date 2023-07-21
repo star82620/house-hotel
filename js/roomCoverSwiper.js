@@ -107,6 +107,7 @@ function closePopup(e) {
   //關閉 popup
   if (isPopupBackdrop || e.key === "Escape") {
     photoZoomIn.innerHTML = "";
+    document.body.style.overflow = "scroll";
   }
 
   const prevIndex = imgIndex - 1;

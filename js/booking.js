@@ -112,6 +112,7 @@ function popUpClose(e) {
       alertElement.style.display = "none";
     }
   }
+  document.body.style.overflow = "scroll";
 }
 
 popUpCloseBtn.forEach((item) => {

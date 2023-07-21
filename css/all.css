@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -239,6 +240,11 @@ main {
   justify-content: center;
   align-items: center;
   gap: 10px;
+  background: rgba(255, 255, 255, 0.6666666667);
+  color: #38470b;
+}
+.backRoomList:hover {
+  background: #fff;
 }
 .backRoomList .arrowLeft {
   height: 16px;
@@ -253,6 +259,11 @@ main {
   align-items: end;
   margin-top: 450px;
   gap: 20px;
+}
+
+.roomPriceSlash {
+  font-size: 24px;
+  font-weight: 300;
 }
 
 .roomPrice {
@@ -299,34 +310,45 @@ main {
 
 .roomNotice {
   margin-top: 35px;
+  margin-left: 14px;
   font-weight: 300;
   line-height: 24px;
 }
 .roomNotice li {
-  list-style: disc;
+  list-style-type: "・";
 }
 
 .roomFacilities {
   display: flex;
   flex-wrap: wrap;
   margin-top: 45px;
+  margin-left: 12px;
   gap: 36px 25px;
+}
+.roomFacilities li {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .roomFacilityIcon {
   display: flex;
-  align-items: start;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
   gap: 0 4px;
+  min-width: 60px;
 }
 
 .facilityIconMain {
-  width: 40px;
+  max-width: 40px;
   height: auto;
 }
 
 .facilityIconSmall {
   width: 15px;
   height: auto;
+  align-self: flex-start;
 }
 
 .roomFacilityTitle {
@@ -336,6 +358,7 @@ main {
 
 .roomBookingState {
   margin-top: 28px;
+  padding-bottom: 32px;
 }
 .roomBookingState h3 {
   font-weight: 500;
@@ -402,7 +425,7 @@ main {
 }
 
 .photoZoomIn {
-  position: absolute;
+  position: fixed;
   z-index: 20;
   overflow: hidden;
   width: 100%;
@@ -715,6 +738,18 @@ main {
   margin: 0;
   text-align: left;
 }
+.booking .customer .enterDateMessage,
+.booking .customer .leaveDateMessage {
+  position: relative;
+}
+.booking .customer .enterDateMessage::before,
+.booking .customer .leaveDateMessage::before {
+  content: "▾";
+  position: absolute;
+  right: 12px;
+  top: -27px;
+  color: #38470b;
+}
 .booking .customer .enterDate,
 .booking .customer .leaveDate {
   width: 100%;
@@ -805,8 +840,21 @@ main {
 }
 .booking .info .icon {
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 0 12px;
+  width: 100%;
   text-align: center;
+}
+.booking .info .icon li {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.booking .info .icon li img {
+  max-width: 32px;
+  max-height: 32px;
 }
 .booking .info .icon p {
   color: #949c7c;
@@ -814,7 +862,7 @@ main {
 
 .bookingInfoList li {
   line-height: 26px;
-  list-style: disc;
+  list-style-type: "・";
   list-style-position: inside;
 }
 
