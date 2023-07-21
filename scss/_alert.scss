@@ -1,13 +1,22 @@
 .success {
   display: none;
-
 }
 
 .fail {
   display: none;
 }
 
-.booking{
+.booking,
+.alert {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.booking {
   display: none;
 }
 
@@ -53,20 +62,19 @@
     text-align: center;
     line-height: 30px;
   }
-  .close{
+  .close {
     width: 12px;
     position: absolute;
     top: 12px;
     right: 12px;
-    img{
+    img {
       width: 100%;
     }
   }
 }
 
-
-.booking{
-  .container{
+.booking {
+  .container {
     position: fixed;
     z-index: 21;
     left: 50%;
@@ -75,17 +83,17 @@
     border: 1px solid $primary;
     background-color: $primary;
     display: flex;
-    .close{
+    .close {
       width: 12px;
       position: absolute;
       top: 38px;
       right: 38px;
-      img{
+      img {
         width: 100%;
       }
-    } 
+    }
   }
-  .customer{
+  .customer {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -94,24 +102,27 @@
     padding: 50px 65px 26px;
     width: 445px;
     height: 600px;
-    ul li{
-      &:nth-child(n+2){
+    ul li {
+      &:nth-child(n + 2) {
         margin-top: 16px;
       }
       display: flex;
       flex-direction: column;
       // position: relative;
     }
-    input{
+    input {
       margin-top: 7px;
       color: $primary;
       height: 38px;
       text-indent: 10px;
-      &:focus{
+      &:focus {
         outline: none;
       }
     }
-    .nameMessage, .phoneMessage, .enterDateMessage, .leaveDateMessage{
+    .nameMessage,
+    .phoneMessage,
+    .enterDateMessage,
+    .leaveDateMessage {
       margin: 0;
       text-align: left;
       // color: red;
@@ -120,46 +131,47 @@
       // top: 44px;
       // transform: translate(0, -50%);
     }
-    .enterDate, .leaveDate{
+    .enterDate,
+    .leaveDate {
       width: 100%;
       padding: 0;
       border: 0;
     }
-    .submit{
+    .submit {
       margin-top: 20px;
       width: 100%;
       height: 42px;
       color: $secondary;
       border: 1px solid $secondary;
       background-color: $primary;
-      &:hover{
+      &:hover {
         border: 1px solid $tertiary;
       }
-      &:active{
+      &:active {
         background-color: $tertiary;
         color: $secondary;
       }
     }
-    .total{
+    .total {
       text-align: right;
-      .days{
+      .days {
         color: $tertiary;
         padding: 16px 0;
         margin-bottom: 8px;
         text-align: left;
         border-bottom: 1px solid $tertiary;
       }
-      h4{
+      h4 {
         line-height: 36px;
       }
     }
-    span{
+    span {
       text-align: center;
       margin-top: 18px;
     }
   }
-  
-  .info{
+
+  .info {
     box-sizing: border-box;
     padding: 50px 94px 25px 30px;
     width: 665px;
@@ -170,13 +182,13 @@
     flex-direction: column;
     justify-content: space-between;
 
-    h2{
+    h2 {
       width: fit-content;
       line-height: 33px;
       font-weight: bold;
       position: relative;
-      &::after{
-        content: '';
+      &::after {
+        content: "";
         display: block;
         background-color: $tertiary;
         opacity: 20%;
@@ -185,19 +197,19 @@
         margin-left: 6px;
         top: 50%;
         right: -395px; //547底寬, 146文字寬, 6 margin
-        left: 100%
+        left: 100%;
       }
     }
-    p{
+    p {
       line-height: 24px;
     }
-    h3{
+    h3 {
       width: fit-content;
       line-height: 24px;
       font-weight: bold;
       position: relative;
-      &::after{
-        content: '';
+      &::after {
+        content: "";
         display: block;
         background-color: $tertiary;
         opacity: 20%;
@@ -206,41 +218,40 @@
         margin-left: 6px;
         top: 50%;
         right: -477px; //547底寬, 64文字寬, 6 margin
-        left: 100%
+        left: 100%;
       }
     }
-    .icon{
+    .icon {
       display: flex;
       gap: 20px;
       text-align: center;
-      p{
+      p {
         color: $tertiary;
       }
     }
-    
   }
 }
 
-.bookingInfoList li{
+.bookingInfoList li {
   line-height: 26px;
   list-style: disc;
   list-style-position: inside;
 }
-.bookingProcess{
+.bookingProcess {
   display: flex;
   justify-content: space-between;
-  li{
+  li {
     position: relative;
-    &+li::before{
-      content: url('../img/room/arrow-left.svg');
+    & + li::before {
+      content: url("../img/room/arrow-left.svg");
       position: absolute;
       // transform: rotateX(-180deg);
       width: 7px;
       height: 14px;
       left: -15px;
       top: 25px;
-      transform: translate( -50%, -50%);
-      transform: rotate(-180deg)
+      transform: translate(-50%, -50%);
+      transform: rotate(-180deg);
     }
     line-height: 18px;
     text-align: center;
@@ -248,19 +259,19 @@
     height: 136px;
     border: 1px solid $tertiary;
     border-radius: 0px 0px 10px 10px;
-    .pic{
+    .pic {
       height: 50px;
       background-color: $tertiary;
       display: flex;
       justify-content: center;
       align-items: center;
-      img{
+      img {
         width: 20%;
         align-self: start;
-        margin: auto
+        margin: auto;
       }
     }
-    p{
+    p {
       margin-top: 12px;
     }
   }
