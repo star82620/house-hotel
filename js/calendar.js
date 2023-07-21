@@ -12,8 +12,6 @@
     let inputSelectedLeaveDates = [];
     let newFilterHolidays;
 
-
-
     //新增入住日期 下拉式日曆，初始化inputCalendar
     function initializeEnterCalendar(btn) {
         inputCalendar = new VanillaCalendar(btn, InputEnterOptions);
@@ -26,8 +24,6 @@
         console.log(inputCalendar)
 
     }
-
-
 
     //新增退房日期 下拉式日曆，初始化inputCalendar
     function initializeLeaveCalendar(btn) {
@@ -87,6 +83,8 @@
 
         selectedDates = datesInRange
 
+        console.log(selectedDates)
+
         bookingAmount()
 
         let ary = datesInRange.filter((item)=>{
@@ -99,7 +97,32 @@
 
     }
 
+    //日曆 計算日期
+    function makeSelectedDates(dates){
+        const startDate = new Date(dates[0]);
+        const endDate = new Date(dates[1]);
+        const datesInRange = [];
+        let currentDate;
 
+        
+        currentDate = new Date(startDate);
+        while (currentDate <= endDate) {
+            datesInRange.push(currentDate.toISOString().split('T')[0]);
+            currentDate.setDate(currentDate.getDate() + 1);
+        }
+        
+        // console.log(datesInRange);
+
+        selectedDates = datesInRange
+
+        console.log(selectedDates)
+
+        bookingAmount()
+
+        let ary = datesInRange.filter((item)=>{
+            return !dates.includes(item)
+        })
+    }
 
     //渲染入住日期＆退房日期
     function renderSelectedDates(){
@@ -137,6 +160,8 @@
             // console.log(dates); //ex. ['2023-07-22']
             console.log(calendar)
             selectedDates = dates;
+            // console.log(selectedDates)
+            makeSelectedDates(selectedDates)
             },
         },
         CSSClasses: {
