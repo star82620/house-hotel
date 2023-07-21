@@ -13,6 +13,7 @@
 
 .alert .container {
   position: fixed;
+  z-index: 21;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -67,6 +68,7 @@
 .booking{
   .container{
     position: fixed;
+    z-index: 21;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -91,22 +93,37 @@
     color: $secondary;
     padding: 50px 65px 26px;
     width: 445px;
+    height: 600px;
     ul li{
       &:nth-child(n+2){
         margin-top: 16px;
       }
-      gap: 7px;
       display: flex;
       flex-direction: column;
+      // position: relative;
     }
     input{
+      margin-top: 7px;
       color: $primary;
       height: 38px;
       text-indent: 10px;
       &:focus{
         outline: none;
-        // ba
       }
+    }
+    .nameMessage, .phoneMessage, .enterDateMessage, .leaveDateMessage{
+      margin: 0;
+      text-align: left;
+      // color: red;
+      // position: absolute;
+      // left: 0;
+      // top: 44px;
+      // transform: translate(0, -50%);
+    }
+    .enterDate, .leaveDate{
+      width: 100%;
+      padding: 0;
+      border: 0;
     }
     .submit{
       margin-top: 20px;
@@ -146,6 +163,7 @@
     box-sizing: border-box;
     padding: 50px 94px 25px 30px;
     width: 665px;
+    height: 600px;
     background-color: $secondary;
     color: $primary;
     display: flex;

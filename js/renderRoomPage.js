@@ -2,9 +2,11 @@
 let ary = [
   {roomEn: 'Single Room', roomCh: '單人間', bedEn: 'single', bedCh: '單人床', 'people': ''},
   {roomEn: 'Deluxe Single Room', roomCh: '豪華單人間', bedEn: 'small double', bedCh: '小雙人床', 'people': ''},
+  {roomEn: 'Double Room', roomCh: '雙人間', bedEn: 'double', bedCh: '雙人床', 'people': ''},
+  {roomEn: 'Deluxe Double Room', roomCh: '豪華雙人間', bedEn: 'queen', bedCh: '皇后床', 'people': ''},
   {roomEn: 'Twin Room', roomCh: '雙人間', bedEn: 'double', bedCh: '雙人床', 'people': ''},
-  {roomEn: 'Double Room', roomCh: '雙人間', bedEn: 'queen', bedCh: '皇后床', 'people': ''},
-  {roomEn: 'Deluxe Double Room', roomCh: '豪華雙人間', bedEn: 'double', bedCh: '雙人床', 'people': ''}
+  {roomEn: 'Deluxe Twin Room', roomCh: '豪華雙人間', bedEn: 'queen', bedCh: '皇后床', 'people': ''}
+
 ]
 
 let chAry = [
@@ -67,7 +69,6 @@ function renderRoomPage(){
         </div>
       `
       initializeCalendar();
-      // initializeInputCalendar();
 
       const reSearch = document.querySelector('.reSearch');
       reSearch.addEventListener('click',reSearchSelectedDates)
@@ -77,8 +78,6 @@ function renderRoomPage(){
 
 
   })
-
-
 
 }
 
@@ -159,7 +158,7 @@ function renderBookingPage(){
     if(item.roomEn===roomDes.name){
       const info = document.querySelector('.info');
       info.innerHTML = `
-          <h2 class="fz-24">Single Room</h2>
+          <h2 class="fz-24">${roomDes.name}</h2>
           <p class="fz-14">
             ${ary[index].people}人・ ${ary[index].roomCh}・附早餐・ 衛浴1間・${roomDes.descriptionShort.Footage}平方公尺<br/>
             平日（一～四）價格：${roomDes.normalDayPrice} / 假日（五〜日）價格：${roomDes.holidayPrice}
@@ -262,7 +261,6 @@ function renderBookingDayAndNight(holidaysCount, normalDaysCount, amount){
 
 //計算訂房價格
 function bookingAmount(){
-  console.log()
   // console.log(newFilterHolidays)
   let holidaysCount = 0;
   let normalDaysCount = 0;
@@ -287,4 +285,28 @@ function bookingAmount(){
 function reSearchSelectedDates(){
   calendar.selectedDates = [];
   calendar.update();
+  selectedDates = []
+  // console.log(calendar)
+  renderSelectedDates();
+  bookingAmount();
+}
+
+//測試刪除
+// deleteAll()
+
+function deleteAll(){
+  fetch('https://challenge.thef2e.com/api/thef2e2019/stage6/rooms', {
+      method: "DELETE",
+      headers: {
+          Authorization:
+          "Bearer QHcLaqsSDAC5HS0fQ3wEiLKguA268w8f3Pz2LgosjLybpkztoGQXzwuHPAgO",
+          "Content-Type": "application/json",
+      },
+  })
+  .then((res)=>{
+      console.log(res)
+      init()
+  }
+  )
+  .catch((err)=>console.log(err.response.data.message))
 }

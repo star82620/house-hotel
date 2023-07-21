@@ -5,61 +5,118 @@
     
 
     let calendar;
+    let inputCalendar;
     let selectedDates = [];
+    let inputSelectedDates = [];
+    let inputSelectedEnterDates = [];
+    let inputSelectedLeaveDates = [];
     let newFilterHolidays;
 
-    //新增入住日期&退房日期 下拉式日曆
-    function inputCalendar(){
-        // testCalendar();
-        console.log(calendar)
 
-        // calendar.input = true;
 
-        // calendar.update()
+    //新增入住日期 下拉式日曆，初始化inputCalendar
+    function initializeEnterCalendar(btn) {
+        inputCalendar = new VanillaCalendar(btn, InputEnterOptions);
+        inputCalendar.init();
 
+        console.log(calendar.rangeDisabled)
+        inputCalendar.settings.range.disabled = calendar.rangeDisabled
+        inputCalendar.update();
+
+        console.log(inputCalendar)
 
     }
 
 
-    // function addChangeToInput(){
-    //     return changeToInput(e, HTMLInputElement, dates, time, hours, minutes, keeping){
-    //         // dates.sort((a,b)=>+new Date(a) - +new Date(b));
-    //         // console.log(dates)
-    //         if(dates.length===1){
-    //             HTMLInputElement.value = dates[0]
-    //         }else{
-    //         HTMLInputElement.value = `${dates[0]} - ${dates[dates.length-1]}`;
-    //         }
-    //     }
-    // }
 
-    //初始化inputCalendar
-    // function initializeInputCalendar(obj) {
-    //     calendar = new VanillaCalendar(BookingEnterDate, options);
-    //     // calendar.type = 'default';
-    //     calendar.input = true;
-    //     calendar.settings.selection.day = 'single';
-    //     calendar.actions.changeToInput=
-        
+    //新增退房日期 下拉式日曆，初始化inputCalendar
+    function initializeLeaveCalendar(btn) {
+        inputCalendar = new VanillaCalendar(btn, InputLeaveOptions);
+        inputCalendar.init();
 
-    //     if(dates.length===1){
-    //         HTMLInputElement.value = dates[0];
-    //         calendar.HTMLElement.classList.add('vanilla-calendar_hidden');
+        // console.log(calendar.rangeDisabled)
+        inputCalendar.settings.range.disabled = calendar.rangeDisabled
+        inputCalendar.update();
 
-    //     }
-    //     calendar.init();
+        console.log(inputCalendar)
 
-        
-    //     calendar.update();
-    // }
+    }
+
+    //下拉式日曆 入住日期&退房日期是否同天
+    function checkSameSelectedDates(inputSelectedEnterDates, inputSelectedLeaveDates, dates, HTMLInputElement){
+        console.log(HTMLInputElement.value)
+        if(inputSelectedEnterDates.toString()===inputSelectedLeaveDates.toString()){
+            console.log(inputSelectedLeaveDates)
+            inputSelectedLeaveDates = [];
+            BookingLeaveDate.value='';
+        }else{
+            HTMLInputElement.value = dates[0];
+        }
+    }
+
+    //下拉式日曆 計算日期
+    function inputMakeSelectedDates(inputSelectedEnterDates, inputSelectedLeaveDates){
+        console.log(inputSelectedEnterDates, inputSelectedLeaveDates)
+
+        if(inputSelectedEnterDates.length===0){
+            inputSelectedEnterDates = selectedDates[0];
+        };
+        if(inputSelectedLeaveDates.length===0){
+            inputSelectedLeaveDates = selectedDates[selectedDates.length-1];
+        };
+        // let str;
+        const startDate = new Date(inputSelectedEnterDates);
+        const endDate = new Date(inputSelectedLeaveDates);
+        const datesInRange = [];
+        let currentDate;
+
+        if(endDate<startDate){
+            currentDate = new Date(endDate); 
+            while (currentDate <= startDate) {
+                datesInRange.push(currentDate.toISOString().split('T')[0]);
+                currentDate.setDate(currentDate.getDate() + 1);
+            }           
+        }else{
+            currentDate = new Date(startDate);
+            while (currentDate <= endDate) {
+                datesInRange.push(currentDate.toISOString().split('T')[0]);
+                currentDate.setDate(currentDate.getDate() + 1);
+            }
+        }
+        // console.log(datesInRange);
+
+        selectedDates = datesInRange
+
+        bookingAmount()
+
+        let ary = datesInRange.filter((item)=>{
+            return !dates.includes(item)
+        })
+
+        calendar.selectedDates = ary;
+        calendar.update();
+        console.log(calendar)
+
+    }
+
+
 
     //渲染入住日期＆退房日期
     function renderSelectedDates(){
         // console.log(selectedDates)
+        BookingEnterDate.value='';
+        BookingLeaveDate.value='';
         if(selectedDates.length>0){
-            BookingEnterDate.value=selectedDates[0];
-            BookingLeaveDate.value=selectedDates[selectedDates.length-1];
+            if(selectedDates[0]===selectedDates[selectedDates.length-1]){
+                BookingEnterDate.value=selectedDates[0];
+                BookingLeaveDate.value='';
+            }else{
+                BookingEnterDate.value=selectedDates[0];
+                BookingLeaveDate.value=selectedDates[selectedDates.length-1];
+            }
         }
+        
+
     }
 
     //渲染日曆disable
@@ -78,19 +135,9 @@
             clickDay(event, dates) {
                 dates.sort((a, b) => +new Date(a) - +new Date(b)) //預防點擊較晚日期排在最前面
             // console.log(dates); //ex. ['2023-07-22']
-            // console.log(calendar)
+            console.log(calendar)
             selectedDates = dates;
             },
-            
-            // changeToInput(e, HTMLInputElement, dates, time, hours, minutes, keeping) {
-            //     // dates.sort((a,b)=>+new Date(a) - +new Date(b));
-            //     // console.log(dates)
-            //     if(dates.length===1){
-            //         HTMLInputElement.value = dates[0]
-            //     }else{
-            //     HTMLInputElement.value = `${dates[0]} - ${dates[dates.length-1]}`;
-            //     }
-            // }
         },
         CSSClasses: {
             dayBtn: 'dayBtn',
@@ -102,7 +149,7 @@
             dayBtnDisabled: 'dayBtnDisabled',
             month: 'month',
             year: 'year',
-            dayBtnHover: 'dayBtnHover'
+            dayBtnHover: 'dayBtnHover',
         },
         settings: {
             iso8601: false, // true>'一'為當週第1天; false>'日'為當週第1天
@@ -117,8 +164,9 @@
             range: {
                 disablePast: true, //不可選取過期日期
                 disabled: ['2023-08-22'], //ex. 8/10-8/13 & 8/22不可選取
+                min: '2023-07-01',
+                max: '2023-09-30',
             },
-
         },
         locale: {
             months: ['January', 'February', 'March', 'April', 'May', 'Jue', 'July', 'August', 'September', 'October', 'November', 'December'],
@@ -142,6 +190,162 @@
                     <div class="vanilla-calendar-header__content">
                     <#Month /><span> </span><#Year />
                     </div>     
+                    <#ArrowNext />
+                </div>
+                <div class="vanilla-calendar-wrapper">
+                    <div class="vanilla-calendar-content">
+                    <#Week />
+                    <#Days />
+                    </div>
+                </div>
+                `,
+        }
+    }
+
+    //下拉式日曆樣式-入住
+    const InputEnterOptions = {
+        input: true,
+        actions: {
+            clickDay(event, dates) {
+                dates.sort((a, b) => +new Date(a) - +new Date(b)) //預防點擊較晚日期排在最前面
+            // console.log(dates); //ex. ['2023-07-22']
+                inputSelectedEnterDates = dates;
+                inputMakeSelectedDates(inputSelectedEnterDates, inputSelectedLeaveDates);
+            },
+            changeToInput(e, HTMLInputElement, dates, time, hours, minutes, keeping) {
+                // console.log(dates[0]===undefined)
+
+                if(!dates[0]) return HTMLInputElement.value = '';
+                HTMLInputElement.value = dates[0];
+
+                // if(!dates[0]){
+                //     HTMLInputElement.value = '';
+                // }else{
+                //     checkSameSelectedDates(inputSelectedEnterDates, inputSelectedLeaveDates, dates, HTMLInputElement)
+                // }
+                // console.log(inputCalendar)
+                // if(inputCalendar.HTMLElement.getAttribute('class').includes('vanilla-calendar_hidden')){
+                //     inputCalendar.HTMLElement.classList.remove('vanilla-calendar_hidden');
+                // }else{
+                //     inputCalendar.HTMLElement.classList.add('vanilla-calendar_hidden');
+                // }
+            }
+        },
+        CSSClasses: {
+            dayBtn: 'dayBtn',
+            dayBtnToday: 'dayBtnToday',
+            dayBtnSelected: 'dayBtnSelected',
+            daySelectedIntermediate: 'daySelectedIntermediate',
+            daySelectedLast: 'daySelectedLast',
+            daySelectedFirst: 'daySelectedFirst',
+            dayBtnDisabled: 'dayBtnDisabled',
+            month: 'month',
+            year: 'year',
+            dayBtnHover: 'dayBtnHover'
+        },
+        settings: {
+            iso8601: false, // true>'一'為當週第1天; false>'日'為當週第1天
+            visibility: {
+                daysOutside: false,
+                weekend: false,
+            },
+            lang: 'define',
+            range: {
+                disablePast: true, //不可選取過期日期
+                disabled: ['2023-08-22'], //ex. 8/10-8/13 & 8/22不可選取
+                min: '2023-07-01',
+                max: '2023-09-30',
+            },
+        },
+        locale: {
+            months: ['January', 'February', 'March', 'April', 'May', 'Jue', 'July', 'August', 'September', 'October', 'November', 'December'],
+            weekday: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+        },
+        DOMTemplates: {
+            default: `
+                <div class="vanilla-calendar-header">
+                    <#ArrowPrev />
+                    <div class="vanilla-calendar-header__content">
+                    <#Month /><span> </span><#Year />
+                    </div>  
+                    <#ArrowNext />
+                </div>
+                <div class="vanilla-calendar-wrapper">
+                    <div class="vanilla-calendar-content">
+                    <#Week />
+                    <#Days />
+                    </div>
+                </div>
+                `,
+        }
+    }
+
+    //下拉式日曆樣式-退房
+    const InputLeaveOptions = {
+        input: true,
+        actions: {
+            clickDay(event, dates) {
+                dates.sort((a, b) => +new Date(a) - +new Date(b)) //預防點擊較晚日期排在最前面
+            // console.log(dates); //ex. ['2023-07-22']
+                inputSelectedLeaveDates = dates;
+                inputMakeSelectedDates(inputSelectedEnterDates, inputSelectedLeaveDates)
+            },
+            changeToInput(e, HTMLInputElement, dates, time, hours, minutes, keeping) {
+                // console.log(dates[0]===undefined)
+
+                if(!dates[0]) return HTMLInputElement.value = '';
+                HTMLInputElement.value = dates[0];
+
+                // if(!dates[0]){
+                //     HTMLInputElement.value = '';
+                // }else{
+                //     checkSameSelectedDates(inputSelectedEnterDates, inputSelectedLeaveDates, dates, HTMLInputElement)
+                // }
+                // console.log(inputCalendar)
+                // if(inputCalendar.HTMLElement.getAttribute('class').includes('vanilla-calendar_hidden')){
+                //     inputCalendar.HTMLElement.classList.remove('vanilla-calendar_hidden');
+                // }else{
+                //     inputCalendar.HTMLElement.classList.add('vanilla-calendar_hidden');
+                // }
+            }
+        },
+        CSSClasses: {
+            dayBtn: 'dayBtn',
+            dayBtnToday: 'dayBtnToday',
+            dayBtnSelected: 'dayBtnSelected',
+            daySelectedIntermediate: 'daySelectedIntermediate',
+            daySelectedLast: 'daySelectedLast',
+            daySelectedFirst: 'daySelectedFirst',
+            dayBtnDisabled: 'dayBtnDisabled',
+            month: 'month',
+            year: 'year',
+            dayBtnHover: 'dayBtnHover'
+        },
+        settings: {
+            iso8601: false, // true>'一'為當週第1天; false>'日'為當週第1天
+            visibility: {
+                daysOutside: false,
+                weekend: false,
+            },
+            lang: 'define',
+            range: {
+                disablePast: true, //不可選取過期日期
+                disabled: ['2023-08-22'], //ex. 8/10-8/13 & 8/22不可選取
+                min: '2023-07-01',
+                max: '2023-09-30',
+            },
+        },
+        locale: {
+            months: ['January', 'February', 'March', 'April', 'May', 'Jue', 'July', 'August', 'September', 'October', 'November', 'December'],
+            weekday: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+        },
+        DOMTemplates: {
+            default: `
+                <div class="vanilla-calendar-header">
+                    <#ArrowPrev />
+                    <div class="vanilla-calendar-header__content">
+                    <#Month /><span> </span><#Year />
+                    </div>  
                     <#ArrowNext />
                 </div>
                 <div class="vanilla-calendar-wrapper">
@@ -202,18 +406,3 @@
     }
     
 
-
-    //測試區
-    // const testOptions = {
-    //     type: 'default',
-    //     input: true
-    // };
-    
-
-    // function testCalendar(){
-    //     const hello = new VanillaCalendar(BookingLeaveDate, testOptions);
-    //     hello.init();
-
-    //     console.log(hello)
-        
-    // }

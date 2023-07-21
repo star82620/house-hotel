@@ -24,9 +24,6 @@
   
 }
 
-
-
-
 .dayBtn, .dayBtnToday{
   color: $primary;
   border: none;
@@ -111,3 +108,30 @@
 //   column-gap: 0px !important;
 // }
 
+.vanilla-calendar_hidden{
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+
+//下拉式日曆
+.booking .vanilla-calendar{
+  box-sizing: border-box !important;
+  border-radius: 0 !important;
+  min-width: 315px !important;
+  min-height: 278px !important;
+  background-color: $secondary !important;
+}
+
+.booking .vanilla-calendar_hidden{
+  visibility: hidden !important;
+}
+
+.hiddenCalendar{
+  visibility: hidden !important;
+}
+
+.booking .vanilla-calendar_to-input{
+  z-index: 1;
+}
