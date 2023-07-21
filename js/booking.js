@@ -20,9 +20,10 @@ function addBookingDates() {
     tel: customerPhone.value,
     date: selectedDates,
   };
+  console.log(jsonStyle)
 
   fetch(
-    "https://challenge.thef2e.com/api/thef2e2019/stage6/room/3Elqe8kfMxdZv5xFLV4OUeN6jhmxIvQSTyj4eTgIowfIRvF4rerA2Nuegzc2Rgwu",
+    `https://challenge.thef2e.com/api/thef2e2019/stage6/room/${roomDes.id}`,
     {
       method: "POST",
       headers: {

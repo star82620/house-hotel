@@ -17,11 +17,11 @@
         inputCalendar = new VanillaCalendar(btn, InputEnterOptions);
         inputCalendar.init();
 
-        console.log(calendar.rangeDisabled)
+        // console.log(calendar.rangeDisabled)
         inputCalendar.settings.range.disabled = calendar.rangeDisabled
         inputCalendar.update();
 
-        console.log(inputCalendar)
+        // console.log(inputCalendar)
 
     }
 
@@ -34,15 +34,15 @@
         inputCalendar.settings.range.disabled = calendar.rangeDisabled
         inputCalendar.update();
 
-        console.log(inputCalendar)
+        // console.log(inputCalendar)
 
     }
 
     //下拉式日曆 入住日期&退房日期是否同天
     function checkSameSelectedDates(inputSelectedEnterDates, inputSelectedLeaveDates, dates, HTMLInputElement){
-        console.log(HTMLInputElement.value)
+        // console.log(HTMLInputElement.value)
         if(inputSelectedEnterDates.toString()===inputSelectedLeaveDates.toString()){
-            console.log(inputSelectedLeaveDates)
+            // console.log(inputSelectedLeaveDates)
             inputSelectedLeaveDates = [];
             BookingLeaveDate.value='';
         }else{
@@ -83,7 +83,7 @@
 
         selectedDates = datesInRange
 
-        console.log(selectedDates)
+        // console.log(selectedDates)
 
         bookingAmount()
 
@@ -93,7 +93,7 @@
 
         calendar.selectedDates = ary;
         calendar.update();
-        console.log(calendar)
+        // console.log(calendar)
 
     }
 
@@ -115,7 +115,7 @@
 
         selectedDates = datesInRange
 
-        console.log(selectedDates)
+        // console.log(selectedDates)
 
         bookingAmount()
 
@@ -383,17 +383,17 @@
         }
     }
 
-    //初始化日曆
-    document.addEventListener('DOMContentLoaded', () => {
-    calendar = new VanillaCalendar('#calendar', options);
-        
-
-        calendar.init();
-
-        updateHolidays()
-
-
-    });
+        //初始化日曆
+        document.addEventListener('DOMContentLoaded', () => {
+        calendar = new VanillaCalendar('#calendar', options);
+            
+    
+            calendar.init();
+    
+            updateHolidays()
+    
+    
+        });
 
     //更新台灣2023(五-日)
     function updateHolidays(){
