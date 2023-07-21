@@ -2,9 +2,11 @@
 let ary = [
   {roomEn: 'Single Room', roomCh: '單人間', bedEn: 'single', bedCh: '單人床', 'people': ''},
   {roomEn: 'Deluxe Single Room', roomCh: '豪華單人間', bedEn: 'small double', bedCh: '小雙人床', 'people': ''},
+  {roomEn: 'Double Room', roomCh: '雙人間', bedEn: 'double', bedCh: '雙人床', 'people': ''},
+  {roomEn: 'Deluxe Double Room', roomCh: '豪華雙人間', bedEn: 'queen', bedCh: '皇后床', 'people': ''},
   {roomEn: 'Twin Room', roomCh: '雙人間', bedEn: 'double', bedCh: '雙人床', 'people': ''},
-  {roomEn: 'Double Room', roomCh: '雙人間', bedEn: 'queen', bedCh: '皇后床', 'people': ''},
-  {roomEn: 'Deluxe Double Room', roomCh: '豪華雙人間', bedEn: 'double', bedCh: '雙人床', 'people': ''}
+  {roomEn: 'Deluxe Twin Room', roomCh: '豪華雙人間', bedEn: 'queen', bedCh: '皇后床', 'people': ''}
+
 ]
 
 let chAry = [
@@ -67,11 +69,14 @@ function renderRoomPage(){
         </div>
       `
       initializeCalendar();
-      // initializeInputCalendar();
+
+      const reSearch = document.querySelector('.reSearch');
+      reSearch.addEventListener('click',reSearchSelectedDates)
+
 
     }
-    
-    
+
+
   })
 
 }
@@ -153,7 +158,7 @@ function renderBookingPage(){
     if(item.roomEn===roomDes.name){
       const info = document.querySelector('.info');
       info.innerHTML = `
-          <h2 class="fz-24">Single Room</h2>
+          <h2 class="fz-24">${roomDes.name}</h2>
           <p class="fz-14">
             ${ary[index].people}人・ ${ary[index].roomCh}・附早餐・ 衛浴1間・${roomDes.descriptionShort.Footage}平方公尺<br/>
             平日（一～四）價格：${roomDes.normalDayPrice} / 假日（五〜日）價格：${roomDes.holidayPrice}
@@ -245,7 +250,7 @@ function renderBookingDayAndNight(holidaysCount, normalDaysCount, amount){
   }else{
     str = `
       <div class="total">
-        <p class="days">${selectedDates.length}天，${holidaysCount}晚平日，${normalDaysCount}晚假日</p>
+        <p class="days">${selectedDates.length}天，${normalDaysCount}晚平日，${holidaysCount}晚假日</p>
         總計<br/>
         <h4 class="fz-26">$${amount}</h4>
       </div>
@@ -256,23 +261,52 @@ function renderBookingDayAndNight(holidaysCount, normalDaysCount, amount){
 
 //計算訂房價格
 function bookingAmount(){
-  console.log()
   // console.log(newFilterHolidays)
   let holidaysCount = 0;
   let normalDaysCount = 0;
   let filterSelectedDates = selectedDates.slice(0,-1)
-  console.log(filterSelectedDates)
+  // console.log(filterSelectedDates)
   filterSelectedDates.forEach((item,index)=>{
-    if(filterSelectedDates.includes(item)){
+    if(newFilterHolidays.includes(item)){
       holidaysCount++
     }else{
       normalDaysCount++
     }
   });
-  console.log(holidaysCount, normalDaysCount)
+  // console.log(holidaysCount, normalDaysCount)
   let holidaysAmount = holidaysCount*roomDes.holidayPrice;
   let normalDaysAmount = normalDaysCount*roomDes.normalDayPrice;
   let amount = holidaysAmount + normalDaysAmount;
   
   renderBookingDayAndNight(holidaysCount, normalDaysCount, amount)
+}
+
+//日曆重新選取渲染
+function reSearchSelectedDates(){
+  calendar.selectedDates = [];
+  calendar.update();
+  selectedDates = []
+  // console.log(calendar)
+  renderSelectedDates();
+  bookingAmount();
+}
+
+//測試刪除
+// deleteAll()
+
+function deleteAll(){
+  fetch('https://challenge.thef2e.com/api/thef2e2019/stage6/rooms', {
+      method: "DELETE",
+      headers: {
+          Authorization:
+          "Bearer QHcLaqsSDAC5HS0fQ3wEiLKguA268w8f3Pz2LgosjLybpkztoGQXzwuHPAgO",
+          "Content-Type": "application/json",
+      },
+  })
+  .then((res)=>{
+      console.log(res)
+      init()
+  }
+  )
+  .catch((err)=>console.log(err.response.data.message))
 }
