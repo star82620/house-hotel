@@ -313,6 +313,32 @@ html {
   gap: 4px;
 }
 
+.vanilla-calendar_hidden {
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+.booking .vanilla-calendar {
+  box-sizing: border-box !important;
+  border-radius: 0 !important;
+  min-width: 315px !important;
+  min-height: 278px !important;
+  background-color: #ffffff !important;
+}
+
+.booking .vanilla-calendar_hidden {
+  visibility: hidden !important;
+}
+
+.hiddenCalendar {
+  visibility: hidden !important;
+}
+
+.booking .vanilla-calendar_to-input {
+  z-index: 1;
+}
+
 .success {
   display: none;
 }
@@ -327,6 +353,7 @@ html {
 
 .alert .container {
   position: fixed;
+  z-index: 21;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -379,6 +406,7 @@ html {
 
 .booking .container {
   position: fixed;
+  z-index: 21;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -403,9 +431,9 @@ html {
   color: #ffffff;
   padding: 50px 65px 26px;
   width: 445px;
+  height: 600px;
 }
 .booking .customer ul li {
-  gap: 7px;
   display: flex;
   flex-direction: column;
 }
@@ -413,12 +441,22 @@ html {
   margin-top: 16px;
 }
 .booking .customer input {
+  margin-top: 7px;
   color: #38470b;
   height: 38px;
   text-indent: 10px;
 }
 .booking .customer input:focus {
   outline: none;
+}
+.booking .customer .nameMessage, .booking .customer .phoneMessage, .booking .customer .enterDateMessage, .booking .customer .leaveDateMessage {
+  margin: 0;
+  text-align: left;
+}
+.booking .customer .enterDate, .booking .customer .leaveDate {
+  width: 100%;
+  padding: 0;
+  border: 0;
 }
 .booking .customer .submit {
   margin-top: 20px;
@@ -456,6 +494,7 @@ html {
   box-sizing: border-box;
   padding: 50px 94px 25px 30px;
   width: 665px;
+  height: 600px;
   background-color: #ffffff;
   color: #38470b;
   display: flex;
@@ -699,6 +738,8 @@ main {
 .reSearch {
   margin-top: 6px;
   color: #949c7c;
+  cursor: pointer;
+  width: fit-content;
 }
 
 .iconOpacityEffect {

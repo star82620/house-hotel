@@ -46,13 +46,17 @@ function addBookingDates(){
 function checkBookingFull(){
   // console.log(selectedDates)
   // console.log(dates)
-  if(selectedDates.includes(dates)){
-    fail.style.display='block';
-  }else{
+
+  for (let i = 0; i < selectedDates.length; i++) {
+    if (dates.includes(selectedDates[i])) {
+      fail.style.display = 'block';
+      return;
+    }
+  }
+
     addBookingDates()
     success.style.display='block';
     booking.style.display='none';
-  }
 }
 
 //顯示彈跳視窗
@@ -64,8 +68,8 @@ function bookingPopUp(e){
   if(getClass.includes('bookingButton')) {
     booking.style.display='block';
     renderBookingPage();
-    // BookingEnterDate.addEventListener('click', inputCalendar);
-    // BookingLeaveDate.addEventListener('click', inputCalendar);
+    BookingEnterDate.addEventListener('click', initializeEnterCalendar(BookingEnterDate));
+    BookingLeaveDate.addEventListener('click', initializeLeaveCalendar(BookingLeaveDate));
   };
   if(getClass.includes('submit')) {
     validateCustomerInfo();
@@ -84,7 +88,7 @@ function popUpClose(e){
   // console.log(closeNum)
   // console.log(popUpScreen[closeNum])
   popUpScreen[closeNum].style.display='none'
-  
+  // console.log(calendar)
 }
 
 popUpCloseBtn.forEach((item)=>{
