@@ -77,6 +77,7 @@ function openZoomIn(e) {
         </div>
         `;
   photoZoomIn.innerHTML = zoomPhotoElement;
+  document.body.style.overflow = "hidden";
 
   //點擊 popup
   window.addEventListener("keydown", (keydownEvent) => {
