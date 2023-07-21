@@ -69,10 +69,16 @@ function renderRoomPage(){
       initializeCalendar();
       // initializeInputCalendar();
 
+      const reSearch = document.querySelector('.reSearch');
+      reSearch.addEventListener('click',reSearchSelectedDates)
+
+
     }
-    
-    
+
+
   })
+
+
 
 }
 
@@ -261,7 +267,7 @@ function bookingAmount(){
   let holidaysCount = 0;
   let normalDaysCount = 0;
   let filterSelectedDates = selectedDates.slice(0,-1)
-  console.log(filterSelectedDates)
+  // console.log(filterSelectedDates)
   filterSelectedDates.forEach((item,index)=>{
     if(newFilterHolidays.includes(item)){
       holidaysCount++
@@ -269,10 +275,16 @@ function bookingAmount(){
       normalDaysCount++
     }
   });
-  console.log(holidaysCount, normalDaysCount)
+  // console.log(holidaysCount, normalDaysCount)
   let holidaysAmount = holidaysCount*roomDes.holidayPrice;
   let normalDaysAmount = normalDaysCount*roomDes.normalDayPrice;
   let amount = holidaysAmount + normalDaysAmount;
   
   renderBookingDayAndNight(holidaysCount, normalDaysCount, amount)
+}
+
+//日曆重新選取渲染
+function reSearchSelectedDates(){
+  calendar.selectedDates = [];
+  calendar.update();
 }
