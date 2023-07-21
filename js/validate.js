@@ -3,54 +3,50 @@ const nameMessage = document.querySelector(".nameMessage");
 const phoneMessage = document.querySelector(".phoneMessage");
 const enterDateMessage = document.querySelector(".enterDateMessage");
 const leaveDateMessage = document.querySelector(".leaveDateMessage");
-// console.log(form)
 
-function validateCustomerInfo(){
+function validateCustomerInfo() {
   const result = validate(form, constraints);
   // console.log(result);
 
-  if(!result){
-    nameMessage.innerHTML = '';
-    phoneMessage.innerHTML = '';
-    enterDateMessage.innerHTML = '';
-    leaveDateMessage.innerHTML = '';
+  if (!result) {
+    nameMessage.innerHTML = "";
+    phoneMessage.innerHTML = "";
+    enterDateMessage.innerHTML = "";
+    leaveDateMessage.innerHTML = "";
     checkBookingFull();
-    return
+    return;
   }
 
-  nameMessage.innerHTML = result.name || '';
-  phoneMessage.innerHTML = result.phone || '';
-  enterDateMessage.innerHTML = result.enterDate || '';
-  leaveDateMessage.innerHTML = result.leaveDate || '';
-
-
-
+  nameMessage.innerHTML = result.name || "";
+  phoneMessage.innerHTML = result.phone || "";
+  enterDateMessage.innerHTML = result.enterDate || "";
+  leaveDateMessage.innerHTML = result.leaveDate || "";
 }
 
 var constraints = {
   name: {
     presence: {
-      message: "^請填寫姓名"
-    }
+      message: "^請填寫姓名",
+    },
   },
   phone: {
     presence: {
-      message: "^請填寫手機號碼，共10碼"
+      message: "^請填寫手機號碼，共10碼",
     },
     length: {
       minimum: 10,
       maximum: 10,
-      message: "^請填寫手機號碼，共10碼"
-  }
+      message: "^請填寫手機號碼，共10碼",
+    },
   },
   enterDate: {
     presence: {
-      message: "^請選擇入住日期"
-    }
+      message: "^請選擇入住日期",
+    },
   },
   leaveDate: {
     presence: {
-      message: "^請選擇退房日期"
-    }
-  }
+      message: "^請選擇退房日期",
+    },
+  },
 };

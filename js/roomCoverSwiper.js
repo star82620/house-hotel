@@ -115,7 +115,6 @@ function closePopup(e) {
 
   //可以按 Prev
   if (isZoomPrev && isInMin) {
-    console.log("點擊了 Prev");
     zoomPhoto.setAttribute("src", `${roomImages[prevIndex]}`);
     imgIndex = prevIndex;
     checkCoverRange();
