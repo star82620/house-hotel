@@ -697,14 +697,15 @@ main {
   background-color: #949c7c;
   color: #ffffff;
 }
-.booking .customer .days {
-  color: #949c7c;
-  margin: 16px 0;
-}
 .booking .customer .total {
-  border-top: 1px solid #949c7c;
-  padding-top: 8px;
   text-align: right;
+}
+.booking .customer .total .days {
+  color: #949c7c;
+  padding: 16px 0;
+  margin-bottom: 8px;
+  text-align: left;
+  border-bottom: 1px solid #949c7c;
 }
 .booking .customer .total h4 {
   line-height: 36px;
