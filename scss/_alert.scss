@@ -237,8 +237,24 @@
     }
     .icon {
       display: flex;
-      gap: 20px;
+      flex-wrap: wrap;
+      align-items: end;
+      gap: 0 12px;
+      width: 100%;
       text-align: center;
+
+      li {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        img {
+          max-width: 32px;
+          max-height: 32px;
+        }
+      }
+
       p {
         color: $tertiary;
       }
