@@ -255,10 +255,10 @@ function bookingChangeIcon() {
     return item.YN;
   });
   let str = "";
-  ary.forEach((item, index) => {
+  ary.forEach((item) => {
     str += `
       <li>
-        <img src="./img/room/icon/icon-${index + 1}.svg" alt='${item.name}'>
+        <img src="./img/room/icon/icon-${item.order}.svg" alt='${item.name}'>
         <p class="fz-10">${item.name}</p>
       </li>
     `;
